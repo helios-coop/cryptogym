@@ -43,3 +43,26 @@ export const LessonNav = styled.div`
 export const BNav = styled.div`
 	display: flex;
 `;
+
+export const LessonContainer = styled.div`
+	display: flex;
+	justify-content: center;
+	color: palevioletred;
+	min-height: 400px;
+`;
+
+export const ContentContainer = styled.div`
+	font-size: 1.5em;
+	text-align: center;
+	color: palevioletred;
+	width: 100%;
+	min-height: 400px;
+`;
+
+export const EditorContainer = styled.div`
+	font-size: 1.5em;
+	text-align: center;
+	color: palevioletred;
+	width: 100%;
+	min-height: 400px;
+`;
