@@ -13,8 +13,10 @@ ReactDOM.render(
 			<Route path="/" component={TopNav} />
 			<Route exact path="/" component={Course} />
 			<Route path="/lesson" component={BottomNav} />
-			<Route path="/lesson/:lsn" component={Lesson} />
-			<Route path="/lesson/:lsn/chapter/:ch" component={Lesson} />
+			<Route path="/lotion/lesson/:lsn" component={Lesson} />
+			<Route path="/lotion/lesson/:lsn/chapter/:ch" component={Lesson} />
+			<Route path="/bcoin/lesson/:lsn" component={Lesson} />
+			<Route path="/bcoin/lesson/:lsn/chapter/:ch" component={Lesson} />
 		</div>
 	</Router>,
 	document.getElementById('root')
