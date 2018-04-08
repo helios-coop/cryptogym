@@ -7,34 +7,38 @@ import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class CourseHome extends Component {
-	state = {
-		introText: [],
-	};
+  state = {
+    introText: []
+  };
 
-	getIntroData = () => {
-		axios
-			.get('http://localhost:5000/intro-text')
-			.then(response => {
-				this.setState({ projects: response.data });
-			})
-			.catch(error => {
-				console.log(`There was an error getting text: ${error}`);
-			});
-	};
+  getIntroText = () => {
+    axios
+      .get('http://localhost:5000/0/1')
+      .then(response => {
+        const newState = this.state.introText;
+        newState.push(response.data);
+        this.setState({ introText: newState });
+      })
+      .catch(error => {
+        console.log(`There was an error getting text: ${error}`);
+      });
+  };
 
-	componentDidMount = () => {
-		this.getIntroText;
-	};
+  componentDidMount = () => {
+    this.getIntroText();
+  };
 
   render() {
     return (
       <CourseHomeContainer>
         <h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
-        <p className="lead mt-4 text-center">
-          In this lesson you will start by learning about blockchain technology
-          and the three protocols that make up a blockchain. Excited? Let's get
-          started!
-        </p>
+        {this.state.introText.map(text => {
+          return (
+            <p key={Date()} className="lead mt-4 text-center">
+              {text}
+            </p>
+          );
+        })}
         <div className="d-flex justify-content-center mt-5">
           <Link to={`${this.props.match.url}/1/chapter/1`}>
             <Button color="danger" size="lg" active>
