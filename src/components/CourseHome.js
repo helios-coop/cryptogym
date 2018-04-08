@@ -11,6 +11,7 @@ export default class CourseHome extends Component {
     introText: []
   };
 
+
   getIntroText = () => {
     axios
       .get('http://localhost:5000/0/1')
