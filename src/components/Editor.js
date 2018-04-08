@@ -12,8 +12,8 @@ export default class Editor extends Component {
 	}
 
 	updateState = newText => {
-		console.log(this);
-		console.log(newText);
+		//console.log(newText);
+		//this.setState({ text: 0 });
 		console.log(this.state.text);
 	};
 
