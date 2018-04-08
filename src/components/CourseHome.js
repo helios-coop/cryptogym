@@ -13,9 +13,9 @@ export default class CourseHome extends Component {
 
 	getIntroData = () => {
 		axios
-			.get('http://localhost:5000/intro-text')
+			.get('http://localhost:5000/0/1')
 			.then(response => {
-				this.setState({ projects: response.data });
+				this.setState({ introText: response.data });
 			})
 			.catch(error => {
 				console.log(`There was an error getting text: ${error}`);
@@ -26,23 +26,23 @@ export default class CourseHome extends Component {
 		this.getIntroText;
 	};
 
-  render() {
-    return (
-      <CourseHomeContainer>
-        <h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
-        <p className="lead mt-4 text-center">
-          In this lesson you will start by learning about blockchain technology
-          and the three protocols that make up a blockchain. Excited? Let's get
-          started!
-        </p>
-        <div className="d-flex justify-content-center mt-5">
-          <Link to={`${this.props.match.url}/1/chapter/1`}>
-            <Button color="danger" size="lg" active>
-              Start
-            </Button>{' '}
-          </Link>
-        </div>
-      </CourseHomeContainer>
-    );
-  }
+	render() {
+		return (
+			<CourseHomeContainer>
+				<h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
+				<p className="lead mt-4 text-center">
+					In this lesson you will start by learning about blockchain technology
+					and the three protocols that make up a blockchain. Excited? Let's get
+					started!
+				</p>
+				<div className="d-flex justify-content-center mt-5">
+					<Link to={`${this.props.match.url}/1/chapter/1`}>
+						<Button color="danger" size="lg" active>
+							Start
+						</Button>{' '}
+					</Link>
+				</div>
+			</CourseHomeContainer>
+		);
+	}
 }
