@@ -7,24 +7,24 @@ import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class CourseHome extends Component {
-  state = {
-    introText: []
-  };
+	state = {
+		introText: [],
+	};
 
-  getIntroData = () => {
-    axios
-      .get('http://localhost:5000/intro-text')
-      .then(response => {
-        this.setState({ projects: response.data });
-      })
-      .catch(error => {
-        console.log(`There was an error getting text: ${error}`);
-      });
-  };
+	getIntroData = () => {
+		axios
+			.get('http://localhost:5000/intro-text')
+			.then(response => {
+				this.setState({ projects: response.data });
+			})
+			.catch(error => {
+				console.log(`There was an error getting text: ${error}`);
+			});
+	};
 
-  componentDidMount = () => {
-    this.getIntroText;
-  };
+	componentDidMount = () => {
+		this.getIntroText;
+	};
 
   render() {
     return (
