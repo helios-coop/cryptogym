@@ -7,40 +7,41 @@ import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class CourseHome extends Component {
-  state = {
-    introText: []
-  };
+	state = {
+		introText: [],
+	};
 
-  getIntroData = () => {
-    axios
-      .get('http://localhost:5000/intro-text')
-      .then(response => {
-        this.setState({ projects: response.data });
-      })
-      .catch(error => {
-        console.log(`There was an error getting text: ${error}`);
-      });
-  };
+	getIntroData = () => {
+		axios
+			.get('http://localhost:5000/intro-text')
+			.then(response => {
+				this.setState({ projects: response.data });
+			})
+			.catch(error => {
+				console.log(`There was an error getting text: ${error}`);
+			});
+	};
 
-  componentDidMount = () => {
-    this.getIntroText;
-  };
+	componentDidMount = () => {
+		this.getIntroText;
+	};
 
-  render() {
-    return (
-      <CourseHomeContainer>
-        <h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
-        <p className="lead mt-4">
-          In this lesson you will start by learning about blockchain technology
-          and the three protocols that make up a blockchain. Excited? Let's get
-          started!
-        </p>
-        <div className="d-flex justify-content-center mt-5">
-          <Button color="danger" size="lg" active>
-            Start
-          </Button>{' '}
-        </div>
-      </CourseHomeContainer>
-    );
-  }
+	render() {
+		console.log(this.props.match);
+		return (
+			<CourseHomeContainer>
+				<h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
+				<p className="lead mt-4">
+					In this lesson you will start by learning about blockchain technology
+					and the three protocols that make up a blockchain. Excited? Let's get
+					started!
+				</p>
+				<div className="d-flex justify-content-center mt-5">
+					<Button color="danger" size="lg" active>
+						Start
+					</Button>{' '}
+				</div>
+			</CourseHomeContainer>
+		);
+	}
 }
