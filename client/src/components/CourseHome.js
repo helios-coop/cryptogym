@@ -30,15 +30,17 @@ export default class CourseHome extends Component {
     return (
       <CourseHomeContainer>
         <h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
-        <p className="lead mt-4">
+        <p className="lead mt-4 text-center">
           In this lesson you will start by learning about blockchain technology
           and the three protocols that make up a blockchain. Excited? Let's get
           started!
         </p>
         <div className="d-flex justify-content-center mt-5">
-          <Button color="danger" size="lg" active>
-            Start
-          </Button>{' '}
+          <Link to={`${this.props.match.url}/1/chapter/1`}>
+            <Button color="danger" size="lg" active>
+              Start
+            </Button>{' '}
+          </Link>
         </div>
       </CourseHomeContainer>
     );
