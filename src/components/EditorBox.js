@@ -7,10 +7,10 @@ import 'brace/theme/monokai';
 
 const EditorBox = props => {
 	const onChange = (value, event) => {
-		props.updateState(value);
+		console.log(event, value);
+		//props.updateState(value);
 	};
 
-	console.log(props);
 	return (
 		<div>
 			<AceEditor
