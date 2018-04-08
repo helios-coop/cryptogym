@@ -8,19 +8,21 @@ import Lesson from './components/Lesson.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
+import './index.css';
+
 ReactDOM.render(
-	<Router>
-		<div>
-			<Route path="/" component={TopNav} />
-			<Route exact path="/" component={Course} />
-			<Route exact path="/bcoin/lesson" component={CourseHome} />
-			<Route exact path="/lotion/lesson" component={CourseHome} />
-			<Route path="/lotion/lesson/:lsn/chapter/:ch" component={Lesson} />
-			<Route path="/bcoin/lesson/:lsn/chapter/:ch" component={Lesson} />
-			<Route path="/lotion/lesson" component={BottomNav} />
-			<Route path="/bcoin/lesson" component={BottomNav} />
-		</div>
-	</Router>,
-	document.getElementById('root')
+  <Router>
+    <div>
+      <Route path="/" component={TopNav} />
+      <Route exact path="/" component={Course} />
+      <Route exact path="/bcoin/lesson" component={CourseHome} />
+      <Route exact path="/lotion/lesson" component={CourseHome} />
+      <Route path="/lotion/lesson/:lsn/chapter/:ch" component={Lesson} />
+      <Route path="/bcoin/lesson/:lsn/chapter/:ch" component={Lesson} />
+      <Route path="/lotion/lesson/:lsn/chapter/:ch" component={BottomNav} />
+      <Route path="/bcoin/lesson/:lsn/chapter/:ch" component={BottomNav} />
+    </div>
+  </Router>,
+  document.getElementById('root')
 );
 registerServiceWorker();
