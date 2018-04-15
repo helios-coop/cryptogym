@@ -16,8 +16,12 @@ export default class Editor extends Component {
 		e.session.setValue(this.state.defaultCode);
 	};
 
-	handleSubmit = newValue => {
+	handleSubmit = () => {
 		console.log(this.refs.aceEditor.editor.session.getValue());
+	};
+
+	handleReset = () => {
+		this.refs.aceEditor.editor.session.setValue(this.state.defaultCode);
 	};
 
 	render() {
@@ -36,13 +40,13 @@ export default class Editor extends Component {
 					editorProps={{ $blockScrolling: true }}
 				/>
 				<div style={{ backgroundColor: '#3E3D32', width: '90%' }}>
-					<Button color="light" active>
+					<Button color="light" onClick={this.handleSubmit} active>
 						Lift{' '}
 						<span role="img" aria-label="arm flex">
 							&#128170;
 						</span>
 					</Button>
-					<Button color="light" active>
+					<Button color="light" onClick={this.handleReset} active>
 						Reset{' '}
 						<span role="img" aria-label="recycle emoji">
 							&#x267B;
