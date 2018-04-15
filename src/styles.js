@@ -34,7 +34,8 @@ export const LessonNav = styled.div`
 
 export const BNav = styled.div`
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
+	margin: 0 5%;
 `;
 
 export const LessonContainer = styled.div`
