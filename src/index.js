@@ -11,28 +11,33 @@ import registerServiceWorker from './registerServiceWorker';
 import './index.css';
 
 ReactDOM.render(
-  <Router>
-    <div>
-      <Route path="/" component={TopNav} />
-      <Route exact path="/" component={Course} />
-      <Route exact path="/javascript/exercise" component={CourseHome} />
-      <Route exact path="/python/exercise" component={CourseHome} />
-      <Route exact path="/go/exercise" component={CourseHome} />
-      <Route
-        path="/javascript/exercise/:ex/set/:set/rep/:rep"
-        component={Exercise}
-      />
-      <Route
-        path="/javascript/exercise/:ex/set/:set/rep/:rep"
-        component={Exercise}
-      />
-      <Route
-        path="/python/exercise/:ex/set/:set/rep/:rep"
-        component={BottomNav}
-      />
-      <Route path="/go/exercise/:ex/set/:set/rep/:rep" component={BottomNav} />
-    </div>
-  </Router>,
-  document.getElementById('root')
+	<Router>
+		<div>
+			<Route path="/" component={TopNav} />
+			<Route exact path="/" component={Course} />
+			<Route exact path="/javascript/exercise" component={CourseHome} />
+			<Route exact path="/python/exercise" component={CourseHome} />
+			<Route exact path="/go/exercise" component={CourseHome} />
+			<Route
+				path="/javascript/exercise/:ex/set/:set/rep/:rep"
+				component={Exercise}
+			/>
+			<Route
+				path="/javascript/exercise/:ex/set/:set/rep/:rep"
+				component={BottomNav}
+			/>
+			<Route
+				path="/python/exercise/:ex/set/:set/rep/:rep"
+				component={Exercise}
+			/>
+			<Route
+				path="/python/exercise/:ex/set/:set/rep/:rep"
+				component={BottomNav}
+			/>
+			<Route path="/go/exercise/:ex/set/:set/rep/:rep" component={Exercise} />
+			<Route path="/go/exercise/:ex/set/:set/rep/:rep" component={BottomNav} />
+		</div>
+	</Router>,
+	document.getElementById('root')
 );
 registerServiceWorker();
