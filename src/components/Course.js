@@ -9,16 +9,16 @@ import {
   CardText,
   CardDeck,
   CardSubtitle,
-  CardBody,
-  Jumbotron,
-  Container
+  CardBody
 } from 'reactstrap';
 
 const Course = () => {
   return (
-    <div>
+    <div className="d-flex justify-content-center">
       <HomeContainer>
-        <h1 className="display-4 mb-5 text-center text-white">CryptoGym</h1>
+        <h1 className="display-4 mb-5 mt-3 text-center text-white">
+          CryptoGym
+        </h1>
         <h3 className="text-white text-center">Flex Your Blockchain Muscles</h3>
         <p className="lead text-white text-center px-5">
           CryptoGym is an interactive training center that teaches you
