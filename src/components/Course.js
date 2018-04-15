@@ -1,6 +1,7 @@
 import React from 'react';
-import { HomeContainer, BannerContainer } from '../styles.js';
+import { HomeContainer, BannerContainer, CardTop } from '../styles.js';
 import { Link } from 'react-router-dom';
+import './Course.css';
 import {
   Card,
   Button,
@@ -29,44 +30,52 @@ const Course = () => {
           <Card className="border-dark">
             <Link to="/javascript/exercise" style={{ textDecoration: 'none' }}>
               {' '}
+              <CardBody className="card-js">
+                <CardTitle className="text-center">JavaScript</CardTitle>
+              </CardBody>
               <CardImg
-                className="bg-dark"
-                top
-                width="100%"
+                className="card-js rounded-0"
                 src={require('../images/js-logo.png')}
                 alt="JavaScript"
               />{' '}
-              <CardBody>
-                <CardTitle className="text-center">JavaScript</CardTitle>
-                <CardSubtitle />
+              <CardBody className="card-js">
+                <CardSubtitle className="text-center">
+                  <br />
+                </CardSubtitle>
               </CardBody>
             </Link>
           </Card>
+
           <Card className="border-dark">
-            <CardImg
-              className="bg-light"
-              top
-              width="100%"
-              src={require('../images/python-logo.png')}
-              alt="Python"
-            />
-            <CardBody>
-              <CardTitle className="text-center">Python</CardTitle>
-              <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
-            </CardBody>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <CardBody className="card-python">
+                <CardTitle className="text-center">Python</CardTitle>
+              </CardBody>
+              <CardImg
+                className="bg-light rounded-0"
+                src={require('../images/python-logo.png')}
+                alt="Python"
+              />
+              <CardBody className="card-python">
+                <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
+              </CardBody>
+            </Link>
           </Card>
+
           <Card className="border-dark">
-            <CardImg
-              className="bg-secondary"
-              top
-              width="100%"
-              src={require('../images/go-logo.png')}
-              alt="Go"
-            />
-            <CardBody>
-              <CardTitle className="text-center">Go</CardTitle>
-              <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
-            </CardBody>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+              <CardBody className="card-go">
+                <CardTitle className="text-center">Go</CardTitle>
+              </CardBody>
+              <CardImg
+                className="bg-secondary rounded-0"
+                src={require('../images/go-logo.png')}
+                alt="Go"
+              />
+              <CardBody className="card-go">
+                <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
+              </CardBody>
+            </Link>
           </Card>
         </CardDeck>
       </HomeContainer>
