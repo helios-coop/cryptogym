@@ -12,9 +12,9 @@ export const Logo = styled.img`
 `;
 
 export const HomeContainer = styled.div`
-	min-width: 200px;
-	max-width: 1200px;
-	margin: 10%;
+  min-width: 200px;
+  max-width: 1200px;
+  margin: 0 10% 0 10%;
 `;
 
 export const ExerciseNav = styled.div`
