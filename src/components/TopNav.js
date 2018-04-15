@@ -5,17 +5,19 @@ import { Link } from 'react-router-dom';
 
 const TopNav = () => {
 	return (
-		<div>
-			<TNav>
-				<Link to="/">
-					{' '}
-					<Logo src="../logo.svg" />
-				</Link>
-				<Button color="danger" active>
-					Login
-				</Button>
-			</TNav>
-		</div>
+		<TNav>
+			<Link to="/">
+				<Logo src={require('../images/CryptoGym.png')} alt={'Logo'} />
+			</Link>
+			<Button
+				color="danger"
+				size="sm"
+				style={{ height: '40px', margin: '2%' }}
+				active
+			>
+				Login
+			</Button>
+		</TNav>
 	);
 };
 
