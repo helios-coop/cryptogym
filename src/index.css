@@ -1,7 +1,9 @@
 body {
-	background-color: #252830;
+  background: linear-gradient(to bottom, #000428, #004e92);
+  height: 100%;
+  background-attachment: fixed;
 }
 
 a {
-	font-size: 25px;
+  font-size: 25px;
 }

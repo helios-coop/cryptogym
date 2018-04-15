@@ -1,58 +1,78 @@
 import React from 'react';
-import { HomeContainer, Container } from '../styles.js';
+import { HomeContainer, BannerContainer } from '../styles.js';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
+import {
+  Card,
+  Button,
+  CardImg,
+  CardTitle,
+  CardText,
+  CardDeck,
+  CardSubtitle,
+  CardBody,
+  Jumbotron,
+  Container
+} from 'reactstrap';
 
 const Course = () => {
-	return (
-		<div>
-			<h1 className="display-4 text-center text-white">Crypto Gym</h1>
-			<HomeContainer>
-				<Container>
-					<div className="card bg-light mb-3">
-						<h3 className="card-header">Build A Coin With Lotion</h3>
-						<div className="card-body">
-							<Link to="/lotion/lesson">
-								<h5 className="card-title">
-									<strong>Lesson 1: </strong>Blockchain
-								</h5>
-							</Link>
-							<h5 className="card-title">
-								<strong>Lesson 2: </strong>Transaction Handlers
-							</h5>
-							<h5 className="card-title">
-								<strong>Lesson 3: </strong>Block Handlers
-							</h5>
-							<h5 className="card-title">
-								<strong>Lesson 4: </strong>Make A Cryptocurrency
-							</h5>
-						</div>
-					</div>
-				</Container>
-				<Container>
-					<div className="card bg-light mb-3">
-						<h3 className="card-header">Build A Wallet With Bcoin</h3>
-						<div className="card-body">
-							<Link to="/bcoin/lesson">
-								<h5 className="card-title">
-									<strong>Lesson 1: </strong>Title
-								</h5>
-							</Link>
-							<h5 className="card-title">
-								<strong>Lesson 2: </strong>Title
-							</h5>
-							<h5 className="card-title">
-								<strong>Lesson 3: </strong>Title
-							</h5>
-							<h5 className="card-title">
-								<strong>Lesson 4: </strong>Title
-							</h5>
-						</div>
-					</div>
-				</Container>
-			</HomeContainer>
-		</div>
-	);
+  return (
+    <div>
+      <HomeContainer>
+        <h1 className="display-4 mb-5 text-center text-white">CryptoGym</h1>
+
+        <h3 className="text-white text-center">Flex Your Blockchain Muscles</h3>
+        <p className="lead text-white text-center">
+          CryptoGym is an interactive training center that teaches you
+          blockchain technology one rep at a time. Choose your preferred
+          language and let's get started!
+        </p>
+        <CardDeck className="mt-5">
+          <Card className="border-dark">
+            <Link to="/javascript" style={{ textDecoration: 'none' }}>
+              {' '}
+              <CardImg
+                className="bg-dark"
+                top
+                width="100%"
+                src={require('../images/js-logo.png')}
+                alt="JavaScript"
+              />{' '}
+              <CardBody>
+                <CardTitle className="text-center">JavaScript</CardTitle>
+                <CardSubtitle />
+              </CardBody>
+            </Link>
+          </Card>
+          <Card className="border-dark">
+            <CardImg
+              className="bg-light"
+              top
+              width="100%"
+              src={require('../images/python-logo.png')}
+              alt="Python"
+            />
+            <CardBody>
+              <CardTitle className="text-center">Python</CardTitle>
+              <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
+            </CardBody>
+          </Card>
+          <Card className="border-dark">
+            <CardImg
+              className="bg-secondary"
+              top
+              width="100%"
+              src={require('../images/go-logo.png')}
+              alt="Go"
+            />
+            <CardBody>
+              <CardTitle className="text-center">Go</CardTitle>
+              <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
+            </CardBody>
+          </Card>
+        </CardDeck>
+      </HomeContainer>
+    </div>
+  );
 };
 
 export default Course;
