@@ -1,34 +1,54 @@
 import React, { Component } from 'react';
-import EditorBox from './EditorBox.js';
 import { EditorContainer } from '../styles.js';
+import AceEditor from 'react-ace';
+import { Button } from 'reactstrap';
+
+import 'brace/mode/javascript';
+import 'brace/theme/monokai';
 
 export default class Editor extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			text: 1,
-		};
-		this.updateState = this.updateState.bind(this);
-	}
+	state = {
+		defaultCode: '',
+		requiedCode: null,
+	};
 
-	updateState = newText => {
-		//console.log(newText);
-		//this.setState({ text: 0 });
-		console.log(this.state.text);
+	onLoad = e => {
+		e.session.setValue(this.state.defaultCode);
 	};
 
 	handleSubmit = newValue => {
-		let newV = this.state.text;
-		newV++;
-		this.setState({ text: newV });
-		console.log(this.state.text);
+		console.log(this.refs.aceEditor.editor.session.getValue());
 	};
 
 	render() {
 		return (
 			<EditorContainer>
-				<EditorBox updateState={this.updateState} />
-				<div onClick={this.handleSubmit}>DIE</div>
+				<div
+					style={{ backgroundColor: '#3E3D32', width: '90%', height: '50px' }}
+				/>
+				<AceEditor
+					ref="aceEditor"
+					mode="javascript"
+					theme="monokai"
+					name="Editor"
+					width="90%"
+					onLoad={this.onLoad}
+					editorProps={{ $blockScrolling: true }}
+				/>
+				<div style={{ backgroundColor: '#3E3D32', width: '90%' }}>
+					<Button color="light" active>
+						Lift{' '}
+						<span role="img" aria-label="arm flex">
+							&#128170;
+						</span>
+					</Button>
+					<Button color="light" active>
+						Reset{' '}
+						<span role="img" aria-label="recycle emoji">
+							&#x267B;
+						</span>
+					</Button>
+				</div>
 			</EditorContainer>
 		);
 	}
