@@ -5,7 +5,7 @@ export const TNav = styled.div`
   justify-content: space-between;
   margin: 1%;
   height: 40px;
-  background-color: #000428;
+  background-color: #000000;
 `;
 
 export const Logo = styled.img`
@@ -14,14 +14,12 @@ export const Logo = styled.img`
 `;
 
 export const HomeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
   min-width: 200px;
   max-width: 1200px;
   margin: 10%;
 `;
 
-export const LessonNav = styled.div`
+export const ExerciseNav = styled.div`
   display: flex;
   background-color: blue;
   height: 100%;
@@ -33,7 +31,7 @@ export const BNav = styled.div`
   margin: 0 5%;
 `;
 
-export const LessonContainer = styled.div`
+export const ExerciseContainer = styled.div`
   display: flex;
   justify-content: center;
   color: palevioletred;
