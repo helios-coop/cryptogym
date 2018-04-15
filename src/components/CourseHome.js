@@ -11,7 +11,6 @@ export default class CourseHome extends Component {
     introText: []
   };
 
-
   getIntroText = () => {
     axios
       .get('http://localhost:5000/0/1')
@@ -41,7 +40,7 @@ export default class CourseHome extends Component {
           );
         })}
         <div className="d-flex justify-content-center mt-5">
-          <Link to={`${this.props.match.url}/1/chapter/1`}>
+          <Link to={`${this.props.match.url}/1/set/1/rep/1`}>
             <Button color="danger" size="lg" active>
               Start
             </Button>{' '}
