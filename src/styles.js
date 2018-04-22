@@ -4,7 +4,7 @@ export const TNav = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 0.7%;
-  background-color: #000000;
+  background-color: #29323c;
 `;
 
 export const Logo = styled.img`
@@ -59,6 +59,10 @@ export const CourseHomeContainer = styled.div`
   color: white;
 `;
 
-export const CardTop = styled.div`
-  background: transparent;
+export const JSLogo = styled.div`
+  margin: 0 8%;
+`;
+
+export const PythonLogo = styled.div`
+  margin: 0 8%;
 `;
