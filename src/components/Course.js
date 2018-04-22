@@ -1,17 +1,7 @@
 import React from 'react';
-import { HomeContainer, BannerContainer, CardTop } from '../styles.js';
+import { HomeContainer, JSLogo, PythonLogo } from '../styles.js';
 import { Link } from 'react-router-dom';
-import './Course.css';
-import {
-  Card,
-  Button,
-  CardImg,
-  CardTitle,
-  CardText,
-  CardDeck,
-  CardSubtitle,
-  CardBody
-} from 'reactstrap';
+import { Media } from 'reactstrap';
 
 const Course = () => {
   return (
@@ -26,58 +16,29 @@ const Course = () => {
           blockchain technology one rep at a time. Choose your preferred
           language and let's get started!
         </p>
-        <CardDeck className="mt-5">
-          <Card className="border-dark">
+        <div className="d-flex justify-content-center justify-content-around mt-5 logo-container">
+          <JSLogo>
             <Link to="/javascript/exercise" style={{ textDecoration: 'none' }}>
-              {' '}
-              <CardBody className="card-js">
-                <CardTitle className="text-center">JavaScript</CardTitle>
-              </CardBody>
-              <CardImg
-                className="card-js rounded-0"
+              <h3 className="text-center text-white my-4">JavaScript</h3>
+              <Media
+                object
                 src={require('../images/js-logo.png')}
-                alt="JavaScript"
-              />{' '}
-              <CardBody className="card-js">
-                <CardSubtitle className="text-center">
-                  <br />
-                </CardSubtitle>
-              </CardBody>
+                alt="JavasScript Logo"
+              />
             </Link>
-          </Card>
-
-          <Card className="border-dark">
+          </JSLogo>
+          <PythonLogo>
             <Link to="/" style={{ textDecoration: 'none' }}>
-              <CardBody className="card-python">
-                <CardTitle className="text-center">Python</CardTitle>
-              </CardBody>
-              <CardImg
-                className="bg-light rounded-0"
+              <h3 className="text-center text-white my-4">Python</h3>
+              <Media
+                object
                 src={require('../images/python-logo.png')}
-                alt="Python"
+                alt="Python Logo"
               />
-              <CardBody className="card-python">
-                <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
-              </CardBody>
+              <h5 className="text-center text-white my-3">Coming Soon</h5>
             </Link>
-          </Card>
-
-          <Card className="border-dark">
-            <Link to="/" style={{ textDecoration: 'none' }}>
-              <CardBody className="card-go">
-                <CardTitle className="text-center">Go</CardTitle>
-              </CardBody>
-              <CardImg
-                className="bg-secondary rounded-0"
-                src={require('../images/go-logo.png')}
-                alt="Go"
-              />
-              <CardBody className="card-go">
-                <CardSubtitle className="text-center">Coming Soon</CardSubtitle>
-              </CardBody>
-            </Link>
-          </Card>
-        </CardDeck>
+          </PythonLogo>
+        </div>
       </HomeContainer>
     </div>
   );
