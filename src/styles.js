@@ -59,9 +59,11 @@ export const CourseHomeContainer = styled.div`
 `;
 
 export const JSLogo = styled.div`
-  margin: 0 8%;
+  margin: 0 5% 0 25%;
 `;
 
 export const PythonLogo = styled.div`
-  margin: 0 8%;
+  margin: 0 25% 0 5%;
 `;
+
+// export const LogoContainer = styled.div``;
