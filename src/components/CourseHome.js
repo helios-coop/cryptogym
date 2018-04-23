@@ -8,7 +8,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default class CourseHome extends Component {
   state = {
-    introText: []
+    introText: [],
   };
 
   getIntroText = () => {
@@ -30,7 +30,7 @@ export default class CourseHome extends Component {
 
   render() {
     return (
-      <CourseHomeContainer>
+      <CourseHomeContainer id="home">
         <h2 className="display-4 text-center mt-5">Welcome to the Lesson!</h2>
         {this.state.introText.map(text => {
           return (
