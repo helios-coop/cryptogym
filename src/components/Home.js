@@ -3,7 +3,7 @@ import { HomeContainer, JSLogo, PythonLogo } from '../styles.js';
 import { Link } from 'react-router-dom';
 import { Media } from 'reactstrap';
 
-const Course = () => {
+const Home = () => {
   return (
     <div className="d-flex justify-content-center">
       <HomeContainer>
@@ -18,7 +18,7 @@ const Course = () => {
         </p>
         <div className="d-flex justify-content-center justify-content-around mt-5 logo-container">
           <JSLogo>
-            <Link to="/javascript/exercise" style={{ textDecoration: 'none' }}>
+            <Link to="/javascript" style={{ textDecoration: 'none' }}>
               <h3 className="text-center text-white my-4">JavaScript</h3>
               <Media
                 object
@@ -29,7 +29,7 @@ const Course = () => {
             </Link>
           </JSLogo>
           <PythonLogo>
-            <Link to="/" style={{ textDecoration: 'none' }}>
+            <Link to="/python" style={{ textDecoration: 'none' }}>
               <h3 className="text-center text-white my-4">Python</h3>
               <Media
                 object
@@ -46,4 +46,4 @@ const Course = () => {
   );
 };
 
-export default Course;
+export default Home;
