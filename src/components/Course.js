@@ -24,6 +24,7 @@ const Course = () => {
                 object
                 src={require('../images/js-logo.png')}
                 alt="JavasScript Logo"
+                style={{ height: '240px' }}
               />
             </Link>
           </JSLogo>
@@ -34,6 +35,7 @@ const Course = () => {
                 object
                 src={require('../images/python-logo.png')}
                 alt="Python Logo"
+                style={{ height: '240px' }}
               />
               <h5 className="text-center text-white my-3">Coming Soon</h5>
             </Link>
