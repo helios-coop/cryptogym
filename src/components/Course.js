@@ -16,7 +16,7 @@ const Course = () => {
           blockchain technology one rep at a time. Choose your preferred
           language and let's get started!
         </p>
-        <div className="d-flex justify-content-center justify-content-around mt-5 logo-container">
+        <div className="d-flex justify-content-center justify-content-around mt-5">
           <JSLogo>
             <Link to="/javascript/exercise" style={{ textDecoration: 'none' }}>
               <h3 className="text-center text-white my-4">JavaScript</h3>
