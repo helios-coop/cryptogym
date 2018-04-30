@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import { Card, Button, CardTitle, CardText } from 'reactstrap';
 import { CourseHomeContainer } from '../styles.js';
+import './ExerciseList.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class ExercisesList extends Component {
   state = {
-    exercises: [],
+    exercises: []
   };
 
   getIntroText = () => {
@@ -29,16 +31,21 @@ export default class ExercisesList extends Component {
   render() {
     return (
       <CourseHomeContainer id="home">
-        <h2 className="display-10 text-center mt-5">Pick your exercises!</h2>
+        <h2 className="display-10 text-center mt-5 mb-5">
+          Choose Your Excercise!
+        </h2>
         {this.state.exercises.map((exerciseName, index) => {
           return (
-            <div key={index}>
-              <Link
-                to={`/l${this.props.match.url}/ex/${index + 1}/set/1/rep/1`}
-              >
-                <p className="lead mt-4 text-center">{exerciseName}</p>
-              </Link>
-            </div>
+            <Link
+              to={`/l${this.props.match.url}/ex/${index + 1}/set/1/rep/1`}
+              style={{ textDecoration: 'none' }}
+            >
+              <Card body outline color="warning" className="my-3" key={index}>
+                <CardTitle className="text-center text-dark h4">
+                  {exerciseName}
+                </CardTitle>
+              </Card>
+            </Link>
           );
         })}
       </CourseHomeContainer>
