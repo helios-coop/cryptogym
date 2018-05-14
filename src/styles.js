@@ -53,7 +53,7 @@ export const EditorContainer = styled.div`
 
 export const CourseHomeContainer = styled.div`
   margin: auto;
-  width: 50%;
+  max-width: 500px;
   padding: 10px;
   color: white;
 `;
@@ -65,5 +65,3 @@ export const JSLogo = styled.div`
 export const PythonLogo = styled.div`
   margin: 0 25% 0 5%;
 `;
-
-// export const LogoContainer = styled.div``;
