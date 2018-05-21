@@ -32,7 +32,7 @@ export default class ExercisesList extends Component {
     return (
       <CourseHomeContainer id="home">
         <h2 className="display-10 text-center mt-5 mb-5">
-          Choose Your Excercise!
+          Choose Your Exercise!
         </h2>
         {this.state.exercises.map((exerciseName, index) => {
           return (
