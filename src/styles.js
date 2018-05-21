@@ -13,7 +13,7 @@ export const Logo = styled.img`
 export const HomeContainer = styled.div`
   min-width: 200px;
   max-width: 1200px;
-  margin: 0 10% 0 10%;
+  margin: 0 10% 8% 10%;
 `;
 
 export const ExerciseNav = styled.div`
@@ -64,4 +64,11 @@ export const JSLogo = styled.div`
 
 export const PythonLogo = styled.div`
   margin: 0 25% 0 5%;
+`;
+
+export const FooterContainer = styled.div`
+  left: 0;
+  bottom: 0;
+  height: 500px;
+  width: 100%;
 `;
