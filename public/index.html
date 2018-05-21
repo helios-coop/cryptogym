@@ -19,7 +19,10 @@
       Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
+      
     -->
+    <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+
   <title>CryptoGym</title>
 </head>
 
@@ -38,6 +41,11 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+<script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
+<script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+
+<script>mocha.setup('bdd')</script>
 </body>
 
 </html>

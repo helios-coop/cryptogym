@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { EditorContainer } from '../styles.js';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
+import './sum.test.js';
 
 import 'brace/mode/javascript';
 import 'brace/theme/monokai';
@@ -71,9 +72,19 @@ export default class Editor extends Component {
 
     }
 
-    const cb = (input) => console.log(input);
+    //const cb = (input) => console.log(input);
 
-    eval2(this.refs.aceEditor.editor.session.getValue(), cb)
+    //eval2(this.refs.aceEditor.editor.session.getValue(), cb)
+    // function sum(a, b) {
+    //   return a + b;
+    // }
+    // describe('sum', function () {
+    //   it('should return sum of arguments', function () {
+    //     chai.expect(sum(1, 2)).to.equal(3);
+    //   });
+    // });
+    window.mocha.checkLeaks();
+    window.mocha.run();
   };
 
   handleReset = () => {
@@ -108,6 +119,7 @@ export default class Editor extends Component {
             </span>
           </Button>
         </div>
+        <div id="mocha"></div>
       </EditorContainer>
     );
   }
