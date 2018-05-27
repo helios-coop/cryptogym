@@ -82,3 +82,5 @@ proteinCoin.addBlock(new Block(1, '4/15/2018', { amt: 5 }));
 //console.log(JSON.stringify(proteinCoin, null, 4));
 
 ///2
+
+console.log(proteinCoin.chain[0].hash);
