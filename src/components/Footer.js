@@ -5,7 +5,7 @@ import { FooterContainer } from '../styles.js';
 
 const Footer = () => {
   return (
-    <FooterContainer className="my-5 border-top border-warning">
+    <FooterContainer className="border-top border-warning">
       <h2 className="mt-5 text-center" style={{ color: '#ffb256' }}>
         TEAM
       </h2>
