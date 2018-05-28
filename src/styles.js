@@ -3,7 +3,8 @@ import styled from 'styled-components';
 export const TNav = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0.7%;
+  margin: 20px;
+  max-height: 100px;
 `;
 
 export const Logo = styled.img`
@@ -20,36 +21,43 @@ export const HomeContainer = styled.div`
 export const ExerciseNav = styled.div`
   display: flex;
   background-color: blue;
-  height: 100%;
+  height: 100vh;
 `;
 
 export const BNav = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin: 0 5%;
+  justify-content: space-around;
+  width: 100vw;
+  background: #29323c
+  position: fixed;
+  bottom: 0;
+  padding: 2px 0;
+  z-index: 9999;
 `;
 
 export const ExerciseContainer = styled.div`
   display: flex;
   justify-content: center;
-  color: palevioletred;
-  min-height: 400px;
+  height: calc(100vh - 237px);
 `;
 
 export const ContentContainer = styled.div`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
-  width: 100%;
-  min-height: 400px;
+  height: calc(100% + 92px);
+  font-size: 1.2em;
+  text-align: left;
+  background: white;
+  color: black;
+  width: calc(100% + 92px);
+  min-width: 320px;
+  max-width: 800px;
+  padding: 30px 40px;
+  overflow: auto;
 `;
 
 export const EditorContainer = styled.div`
-  font-size: 1.5em;
-  text-align: center;
-  color: palevioletred;
+  height: 100%;
   width: 100%;
-  min-height: 400px;
+  max-width: 700px;
 `;
 
 export const CourseHomeContainer = styled.div`

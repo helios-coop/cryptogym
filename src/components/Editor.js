@@ -6,11 +6,12 @@ import './sum.test.js';
 import './mocha.css';
 
 import 'brace/mode/javascript';
-import 'brace/theme/monokai';
+// import 'brace/theme/monokai';
+import 'brace/theme/terminal';
 
 export default class Editor extends Component {
   state = {
-    requiredCode: '',
+    requiredCode: ''
   };
 
   componentDidUpdate() {
@@ -29,18 +30,20 @@ export default class Editor extends Component {
   render() {
     return (
       <EditorContainer>
-        <div
-          style={{ backgroundColor: '#3E3D32', width: '90%', height: '50px' }}
-        />
         <AceEditor
           ref="aceEditor"
           mode="javascript"
-          theme="monokai"
+          theme="terminal"
           name="Editor"
           width="90%"
+          height="100%"
+          fontSize="16px"
           editorProps={{ $blockScrolling: true }}
         />
-        <div style={{ backgroundColor: '#3E3D32', width: '90%' }}>
+        <div
+          style={{ backgroundColor: '#1A0005', width: '90%' }}
+          className="d-flex justify-content-around"
+        >
           <Button color="light" onClick={this.handleSubmit} active>
             Lift{' '}
             <span role="img" aria-label="arm flex">
@@ -54,7 +57,7 @@ export default class Editor extends Component {
             </span>
           </Button>
         </div>
-        <div id="mocha"></div>
+        <div id="mocha" />
       </EditorContainer>
     );
   }
