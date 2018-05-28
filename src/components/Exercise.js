@@ -53,7 +53,13 @@ class Exercise extends Component {
       <div>
         <ExerciseContainer>
           <TextContent text={this.state.currentContent.text} />
-          <Editor code={this.state.currentContent.code} defaultCode={''} />
+          <Editor code={this.state.currentContent.code} defaultCode={`class Block {
+    //CODE GOES HERE
+  }
+  
+  module.exports = {
+    Block
+  };`} />
         </ExerciseContainer>
         <BottomNav prev={this.previous} next={this.next} />
       </div>
