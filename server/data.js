@@ -30,14 +30,14 @@ const data = [
                   });
                 })`,
                 prevUrl: '/javascript',
-                nextUrl: '/l/javascript/ex/1/set/1/rep/2',
+                nextUrl: '/l/javascript/ex/1/set/1/rep/2'
               },
               {
                 id: 010102,
                 text: 'How else can we say this? Maybe a different vowel?',
                 code: 'console.log (`hello wurld`)',
                 prevUrl: '/l/javascript/ex/1/set/1/rep/1',
-                nextUrl: '/l/javascript/ex/1/set/1/rep/3',
+                nextUrl: '/l/javascript/ex/1/set/1/rep/3'
               },
               {
                 id: 010103,
@@ -45,9 +45,9 @@ const data = [
                   "Alright let's get weird. Try a DIFFERENT vowel that makes sense.",
                 code: 'console.log (`hello wirld`)',
                 prevUrl: '/l/javascript/ex/1/set/1/rep/2',
-                nextUrl: '/l/javascript/ex/1/set/2/rep/1',
-              },
-            ],
+                nextUrl: '/l/javascript/ex/1/set/2/rep/1'
+              }
+            ]
           },
           {
             setName: 'The Genesis block',
@@ -57,9 +57,9 @@ const data = [
                 text: 'some text',
                 code: 'some code',
                 prevUrl: '/l/javascript/ex/1/set/1/rep/3',
-                nextUrl: '/l/javascript/ex/1/set/3/rep/1',
-              },
-            ],
+                nextUrl: '/l/javascript/ex/1/set/3/rep/1'
+              }
+            ]
           },
           {
             setName: 'Chain it together',
@@ -69,29 +69,29 @@ const data = [
                 text: 'some text',
                 code: 'some code',
                 prevUrl: 'null',
-                nextUrl: 'null',
-              },
-            ],
-          },
-        ],
+                nextUrl: 'null'
+              }
+            ]
+          }
+        ]
       },
       {
         id: 020000,
         exerciseName: 'Consensus',
-        sets: [],
+        sets: []
       },
       {
         id: 020000,
         exerciseName: 'Smart Contracts',
-        sets: [],
+        sets: []
       },
       {
         id: 020000,
         exerciseName: 'Wallet',
-        sets: [],
-      },
-    ],
-  },
+        sets: []
+      }
+    ]
+  }
 ];
 
 module.exports = data;
