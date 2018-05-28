@@ -12,8 +12,23 @@ const data = [
             reps: [
               {
                 id: 010101,
-                text: `## What is a blockchain?\nA blockchain is literally a chain of blocks. In other words, it's a data structure where each block contains a reference to the previous block, some data, and a secure digital fingerprint known as a _hash._\n\nTo generate a hash, a block is run though a cryptographic hash function that outputs a fixed length alphanumeric string. This hash is placed into the next block, so that it has a reference back to the previous block's hash. If any part of a block is mutated after it's been created, the hash would also change. Therefore, all subsequent blocks would contain an incorrect previous hash. This is the fundamental idea behind a blockchain. It is _immutable._\n\nLet's look at an example.`,
-                code: 'console.log (`hello world`)',
+                text:
+                  `## What is a blockchain?
+                  What is a blockchain?
+
+                  A blockchain is literally a chain of blocks. In other words, it's a data structure where each block contains a reference to the previous block, some data, and a secure digital fingerprint known as a _hash._
+                  
+                  To generate a hash, a block is run though a cryptographic hash function that outputs a fixed length alphanumeric string. This hash is placed into the next block, so that it has a reference back to the previous block's hash. If any part of a block is mutated after it's been created, the hash would also change. Therefore, all subsequent blocks would contain an incorrect previous hash. This is the fundamental idea behind a blockchain. It is _immutable._
+                  
+                  Let's look at an example.`,
+                code: `describe('calculateHash', () => {
+                  it('should return correct hash', () => {
+                    const coin = userCode.Block;
+                    const testcoin = new coin(1, '4/15/2018', { amt: 5 });
+                
+                    window.chai.expect(testcoin.hash).to.equal('b06bab5c733ce207c35e34000722a33a4d0d701aadca2599129eac68cef3795e');
+                  });
+                })`,
                 prevUrl: '/javascript',
                 nextUrl: '/l/javascript/ex/1/set/1/rep/2'
               },

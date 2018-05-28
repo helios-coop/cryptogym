@@ -1,6 +1,4 @@
 ///1
-const crypto = require('crypto');
-
 class Block {
   constructor(index, timestamp, data, previousHash = '') {
     this.index = index;
@@ -79,8 +77,8 @@ let proteinCoin = new Blockchain();
 console.log('mining block 1');
 proteinCoin.addBlock(new Block(1, '4/15/2018', { amt: 5 }));
 
-//console.log(JSON.stringify(proteinCoin, null, 4));
+console.log(JSON.stringify(proteinCoin, null, 4));
 
-///2
+/2
 
 console.log(proteinCoin.chain[0].hash);

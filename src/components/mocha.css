@@ -6,6 +6,7 @@ body {
 
 #mocha {
   font: 20px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+  max-width: 800px;
 }
 
 #mocha ul,
@@ -131,7 +132,7 @@ body {
 
 #mocha .test pre.error {
   color: #c00;
-  max-height: 300px;
+  max-height: 800px;
   overflow: auto;
 }
 
@@ -150,7 +151,7 @@ body {
   max-width: -webkit-calc(100% - 42px);
   max-width: -moz-calc(100% - 42px);
   max-width: calc(100% - 42px); /*(2)*/
-  max-height: 300px;
+  max-height: 800px;
   word-wrap: break-word;
   border-bottom-color: #ddd;
   -webkit-box-shadow: 0 1px 3px #eee;
@@ -163,6 +164,7 @@ body {
 
 #mocha .test .html-error pre.error {
   border: none;
+  word-wrap: break-word;
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
   border-radius: 0;
@@ -181,7 +183,10 @@ body {
  *      ^^ seriously
  */
 #mocha .test pre {
+  height: 100%;
   display: block;
+  word-wrap: break-word;
+
   float: left;
   clear: left;
   font: 12px/1.5 monaco, monospace;
