@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './components/Home.js';
+import Team from './components/Team.js';
 import ExercisesList from './components/ExercisesList.js';
 import TopNav from './components/TopNav.js';
 import Exercise from './components/Exercise.js';
@@ -14,6 +15,7 @@ ReactDOM.render(
     <div>
       <Route path="/" component={TopNav} />
       <Route exact path="/" component={Home} />
+      <Route exact path="/team" component={Team} />
       <Route exact path="/javascript" component={ExercisesList} />
       <Route exact path="/python" component={ExercisesList} />
       <Route exact path="/go" component={ExercisesList} />

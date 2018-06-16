@@ -1,8 +1,8 @@
 import React from 'react';
+import Footer from './Footer';
 import { HomeContainer, JSLogo, PythonLogo } from '../styles/styles.js';
 import { Link } from 'react-router-dom';
 import { Media } from 'reactstrap';
-import Footer from './Footer';
 
 const Home = () => {
   return (
@@ -48,6 +48,7 @@ const Home = () => {
               </Link>
             </PythonLogo>
           </div>
+          <br />
         </HomeContainer>
       </div>
       <Footer />
