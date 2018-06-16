@@ -1,5 +1,5 @@
 import React from 'react';
-import { HomeContainer, JSLogo, PythonLogo } from '../styles.js';
+import { HomeContainer, JSLogo, PythonLogo } from '../styles/styles.js';
 import { Link } from 'react-router-dom';
 import { Media } from 'reactstrap';
 import Footer from './Footer';

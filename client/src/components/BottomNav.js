@@ -1,5 +1,5 @@
 import React from 'react';
-import { BNav } from '../styles.js';
+import { BNav } from '../styles/styles.js';
 import { Button } from 'reactstrap';
 
 const BottomNav = props => {
