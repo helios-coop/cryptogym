@@ -1,1 +1,1 @@
-Cryptogym
+CryptoGym
