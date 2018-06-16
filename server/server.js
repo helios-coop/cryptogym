@@ -8,7 +8,7 @@ server.use(helmet());
 server.use(express.json());
 server.use(cors());
 
-const data = require('./data.js');
+const data = require('./resources/data.js');
 
 server.get('/exercises/:languageNumber', (req, res) => {
   const lang = req.params.languageNumber;

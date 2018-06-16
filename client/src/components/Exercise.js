@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { ExerciseContainer } from '../styles.js';
+import { ExerciseContainer } from '../styles/styles.js';
 import TextContent from './TextContent.js';
 import Editor from './Editor.js';
 import BottomNav from './BottomNav.js';
@@ -53,13 +53,16 @@ class Exercise extends Component {
       <div>
         <ExerciseContainer>
           <TextContent text={this.state.currentContent.text} />
-          <Editor code={this.state.currentContent.code} defaultCode={`class Block {
+          <Editor
+            code={this.state.currentContent.code}
+            defaultCode={`class Block {
     //CODE GOES HERE
   }
   
   module.exports = {
     Block
-  };`} />
+  };`}
+          />
         </ExerciseContainer>
         <BottomNav prev={this.previous} next={this.next} />
       </div>

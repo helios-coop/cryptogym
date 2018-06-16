@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import { CourseHomeContainer } from '../styles.js';
+import { CourseHomeContainer } from '../styles/styles.js';
 import { Button } from 'reactstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class CourseHome extends Component {
   state = {
-    introText: [],
+    introText: []
   };
 
   getIntroText = () => {

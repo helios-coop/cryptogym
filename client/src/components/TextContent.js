@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Markdown } from 'react-showdown';
 
-import { ContentContainer } from '../styles.js';
+import { ContentContainer } from '../styles/styles.js';
 
 export default class TextContent extends Component {
   render() {

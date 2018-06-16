@@ -7,7 +7,7 @@ import Exercise from './components/Exercise.js';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import registerServiceWorker from './registerServiceWorker';
 
-import './index.css';
+import './styles/index.css';
 
 ReactDOM.render(
   <Router>
