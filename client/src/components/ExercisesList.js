@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
-import { CourseHomeContainer } from '../styles.js';
-import './ExerciseList.css';
+import { Card, CardTitle } from 'reactstrap';
+import { CourseHomeContainer } from '../styles/styles.js';
+import '../styles/ExerciseList.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
 export default class ExercisesList extends Component {
