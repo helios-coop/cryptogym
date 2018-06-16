@@ -15,7 +15,6 @@ export const HomeContainer = styled.div`
   min-width: 200px;
   max-width: 1200px;
   margin: 0 10% 0 10%;
-  height: 100vh;
 `;
 
 export const ExerciseNav = styled.div`
@@ -75,10 +74,8 @@ export const PythonLogo = styled.div`
   margin: 0 25% 0 5%;
 `;
 
-export const FooterContainer = styled.div`
+export const TeamContainer = styled.div`
   left: 0;
   bottom: 0;
-  height: 100vh;
   width: 100%;
 `;
-``;
