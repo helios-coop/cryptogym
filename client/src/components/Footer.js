@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className=>
+    <div className="">
       <Link className="" to="/team">
         TEAM
       </Link>
