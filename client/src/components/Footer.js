@@ -1,7 +1,7 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
 
-import { FooterContainer } from '../styles.js';
+import { FooterContainer } from '../styles/styles.js';
 
 const Footer = () => {
   return (
