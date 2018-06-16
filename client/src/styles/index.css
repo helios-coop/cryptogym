@@ -1,0 +1,9 @@
+body {
+  background: #29323c;
+  height: 100%;
+  background-attachment: fixed;
+}
+
+a {
+  font-size: 25px;
+}
