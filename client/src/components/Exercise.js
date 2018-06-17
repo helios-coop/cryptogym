@@ -12,7 +12,8 @@ class Exercise extends Component {
     currentContent: {
       id: '',
       text: '',
-      code: '',
+      test: '',
+      placeholder: '',
       prevUrl: '',
       nextUrl: ''
     }
@@ -53,14 +54,8 @@ class Exercise extends Component {
         <ExerciseContainer>
           <TextContent text={this.state.currentContent.text} />
           <Editor
-            code={this.state.currentContent.code}
-            defaultCode={`class Block {
-    //CODE GOES HERE
-  }
-  
-  module.exports = {
-    Block
-  };`}
+            test={this.state.currentContent.test}
+            defaultCode={this.state.currentContent.placeholder}
           />
           <Console />
         </ExerciseContainer>
