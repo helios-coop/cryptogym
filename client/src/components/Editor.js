@@ -5,7 +5,7 @@ import { Button } from 'reactstrap';
 import '../styles/mocha.css';
 
 import 'brace/mode/javascript';
-import 'brace/theme/terminal';
+import 'brace/theme/cobalt';
 
 export default class Editor extends Component {
   state = {
@@ -47,15 +47,18 @@ export default class Editor extends Component {
         <AceEditor
           ref="aceEditor"
           mode="javascript"
-          theme="terminal"
+          theme="cobalt"
           name="Editor"
-          width="90%"
+          width="115%"
           height="100%"
           fontSize="16px"
           editorProps={{ $blockScrolling: true }}
         />
         <div
-          style={{ backgroundColor: '#1A0005', width: '90%' }}
+          style={{
+            backgroundColor: 'black',
+            width: '115%'
+          }}
           className="d-flex justify-content-around"
         >
           <Button color="light" onClick={this.handleSubmit} active>
@@ -71,7 +74,6 @@ export default class Editor extends Component {
             </span>
           </Button>
         </div>
-        <div id="mocha" />
       </EditorContainer>
     );
   }
