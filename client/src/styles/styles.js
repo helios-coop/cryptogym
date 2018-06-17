@@ -93,12 +93,12 @@ export const FooterNav = styled.div`
   position: fixed;
   left: 0;
   bottom: 0;
-  background: black;
+  background: #29323c;
   width: 100%;
   display: flex;
   justify-content: center;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 12px 0;
 `;
 
 export const ConsoleContainer = styled.div`

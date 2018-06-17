@@ -4,7 +4,7 @@ import { FooterNav } from '../styles/styles.js';
 
 const Footer = () => {
   return (
-    <FooterNav>
+    <FooterNav className="border-top border-warning">
       <div className="text-white">© 2018 CryptoGym</div>
       <Link
         className="text-white"
