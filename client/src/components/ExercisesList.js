@@ -31,7 +31,10 @@ export default class ExercisesList extends Component {
   render() {
     return (
       <CourseHomeContainer id="home">
-        <h2 className="display-10 text-center mt-5 mb-5">
+        <h2
+          className="display-10 text-center mt-5 mb-5 quantico"
+          style={{ color: '#79A7EA' }}
+        >
           Choose Your Exercise!
         </h2>
         {this.state.exercises.map((exerciseName, index) => {
