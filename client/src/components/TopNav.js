@@ -7,12 +7,16 @@ const TopNav = () => {
   return (
     <TNav>
       <Link to="/">
-        <Logo src={require('../images/CryptoGym.png')} alt={'Logo'} />
+        <Logo
+          src={require('../images/CryptoGym.png')}
+          alt={'Logo'}
+          style={{ height: '70px' }}
+        />
       </Link>
       <Button
         color="danger"
         size="sm"
-        style={{ height: '40px', margin: '2%' }}
+        style={{ height: '40px', marginTop: '10px' }}
         active
       >
         Login

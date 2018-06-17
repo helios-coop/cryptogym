@@ -1,8 +1,10 @@
 import React from 'react';
 import Footer from './Footer';
-import { HomeContainer, JSLogo, PythonLogo } from '../styles/styles.js';
 import { Link } from 'react-router-dom';
 import { Media } from 'reactstrap';
+
+import { HomeContainer, JSLogo, PythonLogo } from '../styles/styles.js';
+import '../styles/Home.css';
 
 const Home = () => {
   return (
@@ -10,12 +12,12 @@ const Home = () => {
       <div className="d-flex justify-content-center">
         <HomeContainer>
           <h1
-            className="display-4 mb-4 mt-2 text-center heading"
+            className="display-4 mb-4 mt-2 text-center heading quantico"
             style={{ color: '#ffb256' }}
           >
             CryptoGym
           </h1>
-          <h3 className="text-center" style={{ color: '#79A7EA' }}>
+          <h3 className="text-center quantico" style={{ color: '#79A7EA' }}>
             Flex Your Blockchain Muscles
           </h3>
           <p className="lead text-white text-center px-5">
@@ -26,7 +28,9 @@ const Home = () => {
           <div className="d-flex justify-content-center justify-content-around mt-5">
             <JSLogo>
               <Link to="/javascript" style={{ textDecoration: 'none' }}>
-                <h3 className="text-center text-white my-4">JavaScript</h3>
+                <h3 className="text-center text-white my-4 quantico">
+                  JavaScript
+                </h3>
                 <Media
                   object
                   src={require('../images/js-logo.png')}
@@ -37,14 +41,16 @@ const Home = () => {
             </JSLogo>
             <PythonLogo>
               <Link to="/python" style={{ textDecoration: 'none' }}>
-                <h3 className="text-center text-white my-4">Python</h3>
+                <h3 className="text-center text-white my-4 quantico">Python</h3>
                 <Media
                   object
                   src={require('../images/python-logo.png')}
                   alt="Python Logo"
                   style={{ height: '240px' }}
                 />
-                <h5 className="text-center text-white my-3">Coming Soon</h5>
+                <h5 className="text-center text-white mt-3 mb-5">
+                  Coming Soon
+                </h5>
               </Link>
             </PythonLogo>
           </div>

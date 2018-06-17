@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { ExerciseContainer } from '../styles/styles.js';
 import TextContent from './TextContent.js';
 import Editor from './Editor.js';
 import BottomNav from './BottomNav.js';
+import Console from './Console.js';
 
-import 'brace/mode/javascript';
-import 'brace/theme/monokai';
+import { ExerciseContainer } from '../styles/styles.js';
 
 class Exercise extends Component {
   state = {
@@ -58,6 +57,7 @@ class Exercise extends Component {
             test={this.state.currentContent.test}
             defaultCode={this.state.currentContent.placeholder}
           />
+          <Console />
         </ExerciseContainer>
         <BottomNav prev={this.previous} next={this.next} />
       </div>
