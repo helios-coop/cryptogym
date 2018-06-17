@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { EditorContainer } from '../styles/styles.js';
+import { BouncyDiv } from '../styles/styles.js';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
 import '../styles/mocha.css';
@@ -8,15 +9,6 @@ import 'brace/mode/javascript';
 import 'brace/theme/terminal';
 
 export default class Editor extends Component {
-  state = {
-    requiredCode: `class Block {
-    
-    }
-    
-    module.exports = {
-      Block
-    };`
-  };
 
   componentDidUpdate() {
     this.refs.aceEditor.editor.session.setValue(this.props.defaultCode);
@@ -29,10 +21,23 @@ export default class Editor extends Component {
       if (testSpecs) testSpecs.remove();
     }
 
-    const crypto = require('crypto');
-    const userCode = eval(this.refs.aceEditor.editor.session.getValue());
-    eval(this.props.code);
-    window.mocha.run();
+    // Abstract away module export
+
+    if (this.refs.aceEditor.editor.session.$annotations.length === 0) {
+      const crypto = require('crypto');
+      const userCode = eval(this.refs.aceEditor.editor.session.getValue());
+      eval(this.props.test);
+      window.mocha.run(function(failures){
+        if (failures === 0) console.log('pass!') 
+        // play success animation
+        // unlock next lesson
+        else {
+          // set error message
+          // shake animation
+        }
+      })
+    } else console.log(this.refs.aceEditor.editor.session.$annotations); 
+    // set error message
   };
 
   handleReset = () => {
@@ -44,6 +49,9 @@ export default class Editor extends Component {
   render() {
     return (
       <EditorContainer>
+        <BouncyDiv>
+          <p>hie3</p>
+          </BouncyDiv>
         <AceEditor
           ref="aceEditor"
           mode="javascript"
@@ -55,7 +63,7 @@ export default class Editor extends Component {
           editorProps={{ $blockScrolling: true }}
         />
         <div
-          style={{ backgroundColor: '#1A0005', width: '90%' }}
+          style={{ backgroundColor: '#1A0005', width: '90%'}}
           className="d-flex justify-content-around"
         >
           <Button color="light" onClick={this.handleSubmit} active>
@@ -71,7 +79,6 @@ export default class Editor extends Component {
             </span>
           </Button>
         </div>
-        <div id="mocha" />
       </EditorContainer>
     );
   }

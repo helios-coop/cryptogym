@@ -1,4 +1,11 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+import { shake } from 'react-animations';
+
+const shakeAnimation = keyframes`${shake}`;
+
+export const BouncyDiv = styled.div`
+  animation: 1s ${shakeAnimation};
+`;
 
 export const TNav = styled.div`
   display: flex;
