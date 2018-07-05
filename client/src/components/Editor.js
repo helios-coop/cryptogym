@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { EditorContainer } from '../styles/styles.js';
-import { BouncyDiv } from '../styles/styles.js';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
 import '../styles/mocha.css';
@@ -67,7 +66,12 @@ export default class Editor extends Component {
         <div
           style={{
             backgroundColor: 'black',
-            width: '100%'
+            minWidth: '400px',
+            width: '31.8%',
+            position: 'absolute',
+            bottom: '41px',
+            left: 'calc(400px + 33%);',
+            zIndex: '10',
           }}
           className="d-flex justify-content-around"
         >
@@ -80,7 +84,7 @@ export default class Editor extends Component {
           <Button color="light" onClick={this.handleReset} active>
             Reset{' '}
             <span role="img" aria-label="recycle emoji">
-              &#x267B;
+            &#9850;
             </span>
           </Button>
         </div>

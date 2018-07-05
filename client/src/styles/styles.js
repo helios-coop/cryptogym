@@ -1,86 +1,26 @@
-import styled, { keyframes } from 'styled-components';
-import { shake } from 'react-animations';
+import styled from 'styled-components';
 
-const shakeAnimation = keyframes`${shake}`;
-
-export const BouncyDiv = styled.div`
-  animation: 1s ${shakeAnimation};
-`;
+// HOMEPAGE STYLES
 
 export const TNav = styled.div`
-  display: flex;
-  justify-content: space-between;
-  margin: 0 20px;
-  max-height: 100px;
+display: flex;
+justify-content: space-between;
+margin: 0 20px;
+max-height: 100px;
 `;
 
 export const Logo = styled.img`
-  height: 100px;
+height: 100px;
 `;
 
 export const HomeContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 100%;
-  min-width: 200px;
-  max-width: 1000px;
-  margin: 0 auto;
-`;
-
-export const ExerciseNav = styled.div`
-  display: flex;
-  background-color: blue;
-  height: 100vh;
-`;
-
-export const BNav = styled.div`
-  display: flex;
-  justify-content: space-around;
-  width: 100vw;
-  background: #29323c
-  position: fixed;
-  bottom: 0;
-  padding: 2px 0;
-  z-index: 9999;
-`;
-
-export const ExerciseContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  height: calc(100vh - 167px);
-  min-width: 1200px;
-`;
-
-export const ContentContainer = styled.div`
-  height: calc(100% + 92px);
-  font-size: 1.2em;
-  text-align: left;
-  background: #fffff0;
-  color: black;
-  min-width: 400px;
-  width: 34.2vw;
-  padding: 30px 40px;
-  overflow: scroll;
-`;
-
-export const EditorContainer = styled.div`
-  height: 100%;
-  min-width: 400px;
-  width: 31.8vw;
-`;
-
-export const ConsoleContainer = styled.div`
-  height: calc(100% + 92px);
-  min-width: 400px;
-  width: 34vw;
-  background: black;
-`;
-
-export const CourseHomeContainer = styled.div`
-  margin: auto;
-  padding: 10px;
-  color: white;
+display: flex;
+flex-direction: column;
+justify-content: center;
+height: 100%;
+min-width: 200px;
+max-width: 1000px;
+margin: 0 auto;
 `;
 
 export const JSLogo = styled.div`
@@ -89,8 +29,8 @@ export const JSLogo = styled.div`
 
 export const PythonLogo = styled.div`
   margin: 0 25% 0 5%;
-`;
-
+`
+;
 export const TeamContainer = styled.div`
   left: 0;
   bottom: 0;
@@ -110,6 +50,14 @@ export const FooterNav = styled.div`
   padding: 12px 0;
 `;
 
+// COURSE HOME STYLES
+
+export const CourseHomeContainer = styled.div`
+  margin: auto;
+  padding: 10px;
+  color: white;
+`;
+
 export const WeightContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -117,4 +65,57 @@ export const WeightContainer = styled.div`
   @media (max-width: 400px) {
     flex-direction: column;
   }
+`;
+
+// EXERCISE STYLES
+
+export const BNav = styled.div`
+display: flex;
+justify-content: space-around;
+width: 100vw;
+background: #29323c
+position: fixed;
+bottom: 0;
+padding: 2px 0;
+z-index: 5;
+`;
+
+
+export const ExerciseContainer = styled.div`
+display: flex;
+justify-content: center;
+min-width: 1200px;
+`;
+
+export const ContentContainer = styled.div`
+// height: calc(100% + 92px);
+//height: 100% - 20px;
+height: 86vh;
+font-size: 1.2em;
+text-align: left;
+background: #fffff0;
+color: black;
+min-width: 400px;
+width: 34.2vw;
+padding: 30px 40px;
+overflow: auto;
+`;
+
+export const EditorContainer = styled.div`
+// height: 100%;
+height: 86vh;
+min-width: 400px;
+width: 31.8vw;
+`;
+
+export const ExerciseNav = styled.div`
+  display: flex;
+  background-color: blue;
+`;
+
+export const ConsoleContainer = styled.div`
+  height: 86vh;
+  min-width: 400px;
+  width: 34vw;
+  background: black;
 `;
