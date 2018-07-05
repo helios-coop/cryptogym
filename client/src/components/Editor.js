@@ -61,6 +61,7 @@ export default class Editor extends Component {
           width="100%"
           height="100%"
           fontSize="16px"
+          wrapEnabled="true"
           editorProps={{ $blockScrolling: true }}
         />
         <div

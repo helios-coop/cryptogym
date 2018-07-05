@@ -108,12 +108,6 @@ export const FooterNav = styled.div`
   padding: 12px 0;
 `;
 
-export const ConsoleContainer = styled.div`
-  height: calc(100% + 92px);
-  width: 100%;
-  background: black;
-`;
-
 export const Weight = styled.div`
   height: calc(100% + 92px);
   height: 200px;
