@@ -1,11 +1,12 @@
-body {
-  background: #29323c;
-  height: 100%;
-  background-attachment: fixed;
+html {
+  height: 100vh;
+  width: 100%;
 }
 
-#root {
+body {
   height: 100%;
+  background: #29323c;
+  background-attachment: fixed;
 }
 
 a {
@@ -17,8 +18,4 @@ a {
     flex-direction: column;
     align-items: center;
   }
-}
-
-html {
-  height: 100vh;
 }
