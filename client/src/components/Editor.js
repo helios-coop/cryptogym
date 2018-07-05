@@ -11,7 +11,7 @@ import 'brace/theme/cobalt';
 export default class Editor extends Component {
   state = {
     error: ''
-  }
+  };
 
   componentDidUpdate() {
     this.refs.aceEditor.editor.session.setValue(this.props.defaultCode);
@@ -31,18 +31,16 @@ export default class Editor extends Component {
       const userCode = eval(this.refs.aceEditor.editor.session.getValue());
       eval(this.props.test);
 
-      window.mocha.reporter('html').run(function(failures){
-        if (failures === 0) console.log('pass!') 
+      window.mocha.reporter('html').run(function(failures) {
+        if (failures === 0) console.log('pass!');
         // play success animation
         // unlock next lesson
         else {
-          
           // set error message
           // shake animation
         }
-
-      })
-    } else console.log(this.refs.aceEditor.editor.session.$annotations); 
+      });
+    } else console.log(this.refs.aceEditor.editor.session.$annotations);
     this.props.setConsole('error');
   };
 
@@ -60,8 +58,8 @@ export default class Editor extends Component {
           mode="javascript"
           theme="cobalt"
           name="Editor"
-          width="100%"
-          height="81vh"
+          width="115%"
+          height="100%"
           fontSize="16px"
           editorProps={{ $blockScrolling: true }}
         />
