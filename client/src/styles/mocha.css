@@ -6,13 +6,13 @@ body {
 
 #mocha {
   font: 20px/1.5 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  max-width: 800px;
+  max-width: 100%;
 }
 
 #mocha ul,
 #mocha li {
   margin: 0;
-  padding: 0;
+  padding: 0px;
 }
 
 #mocha ul {
@@ -25,7 +25,7 @@ body {
 }
 
 #mocha h1 {
-  margin-top: 15px;
+  margin: 15px 0 5px 0;
   font-size: 1em;
   font-weight: 200;
   color: white;
@@ -50,7 +50,7 @@ body {
 }
 
 #mocha h2 {
-  font-size: 12px;
+  font-size: 16px;
   font-weight: normal;
   cursor: pointer;
 }
@@ -134,7 +134,8 @@ body {
 #mocha .test pre.error {
   color: #c00;
   max-height: 800px;
-  overflow: auto;
+  white-space: pre-wrap;
+  max-width: 95%;
 }
 
 #mocha .test .html-error {
@@ -192,7 +193,7 @@ body {
   font: 12px/1.5 monaco, monospace;
   margin: 5px;
   padding: 15px;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   max-width: 85%; /*(1)*/
   max-width: -webkit-calc(100% - 42px);
   max-width: -moz-calc(100% - 42px);

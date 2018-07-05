@@ -58,7 +58,7 @@ export default class Editor extends Component {
           mode="javascript"
           theme="cobalt"
           name="Editor"
-          width="115%"
+          width="100%"
           height="100%"
           fontSize="16px"
           editorProps={{ $blockScrolling: true }}

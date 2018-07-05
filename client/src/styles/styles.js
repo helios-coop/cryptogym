@@ -49,6 +49,7 @@ export const ExerciseContainer = styled.div`
   display: flex;
   justify-content: center;
   height: calc(100vh - 167px);
+  min-width: 1200px;
 `;
 
 export const ContentContainer = styled.div`
@@ -57,18 +58,22 @@ export const ContentContainer = styled.div`
   text-align: left;
   background: #fffff0;
   color: black;
-  width: calc(100% + 92px);
-  min-width: 300px;
-  max-width: 850px;
+  min-width: 400px;
+  width: 34.2vw;
   padding: 30px 40px;
-  overflow: auto;
 `;
 
 export const EditorContainer = styled.div`
   height: 100%;
-  width: 100%;
-  min-width: 300px;
-  max-width: 700px;
+  min-width: 400px;
+  width: 31.8vw;
+`;
+
+export const ConsoleContainer = styled.div`
+  height: calc(100% + 92px);
+  min-width: 400px;
+  width: 34vw;
+  background: black;
 `;
 
 export const CourseHomeContainer = styled.div`
