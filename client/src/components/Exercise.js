@@ -16,7 +16,7 @@ class Exercise extends Component {
       placeholder: '',
       prevUrl: '',
       nextUrl: ''
-    }
+    },
   };
 
   previous = () => {
@@ -48,6 +48,10 @@ class Exercise extends Component {
       });
   };
 
+  setConsole = (message) => {
+    this.setState({console: [message]})
+  };
+
   render() {
     return (
       <div>
@@ -56,8 +60,9 @@ class Exercise extends Component {
           <Editor
             test={this.state.currentContent.test}
             defaultCode={this.state.currentContent.placeholder}
+            setConsole={this.setConsole}
           />
-          <Console />
+          <Console message={this.state.console}/>
         </ExerciseContainer>
         <BottomNav prev={this.previous} next={this.next} />
       </div>
