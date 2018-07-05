@@ -19,7 +19,6 @@ export const Logo = styled.img`
 `;
 
 export const HomeContainer = styled.div`
-  height: 100%;
   min-width: 200px;
   max-width: 1000px;
   margin: 0 10% 0 10%;
@@ -46,6 +45,7 @@ export const ExerciseContainer = styled.div`
   display: flex;
   justify-content: center;
   height: calc(100vh - 167px);
+  min-width: 1300px;
 `;
 
 export const ContentContainer = styled.div`
@@ -55,7 +55,7 @@ export const ContentContainer = styled.div`
   background: #fffff0;
   color: black;
   width: calc(100% + 92px);
-  min-width: 300px;
+  min-width: 400px;
   max-width: 850px;
   padding: 30px 40px;
   overflow: auto;
@@ -64,7 +64,7 @@ export const ContentContainer = styled.div`
 export const EditorContainer = styled.div`
   height: 100%;
   width: 100%;
-  min-width: 300px;
+  min-width: 400px;
   max-width: 700px;
 `;
 
