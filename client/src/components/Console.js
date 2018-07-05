@@ -6,8 +6,8 @@ class Console extends Component {
   render() {
     return (
       <ConsoleContainer>
-        <div id="mocha" className="mx-5 px-5" />
-        <p>{this.props.message}</p>
+        <div id="mocha" className="mx-2" />
+        <p className="text-danger ml-4">{this.props.message}</p>
       </ConsoleContainer>
     );
   }
