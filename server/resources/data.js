@@ -4,7 +4,7 @@ const data = [
     exercises: [
       {
         id: 010000,
-        exerciseName: 'Blockchain Warm Up',
+        exerciseName: 'BLOCKCHAIN',
         sets: [
           {
             id: 010100,
@@ -152,17 +152,22 @@ module.exports = {
       },
       {
         id: 020000,
-        exerciseName: 'Proof of Work',
+        exerciseName: 'PROOF of WORK',
         sets: []
       },
       {
         id: 020000,
-        exerciseName: 'Transactions',
+        exerciseName: 'TRANSACTIONS',
         sets: []
       },
       {
         id: 020000,
-        exerciseName: 'Wallet',
+        exerciseName: 'WALLET',
+        sets: []
+      },
+      {
+        id: 020000,
+        exerciseName: 'PROTEIN',
         sets: []
       }
     ]

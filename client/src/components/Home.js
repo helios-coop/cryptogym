@@ -20,13 +20,9 @@ const Home = () => {
             Flex Your Blockchain Muscles
           </h3>
           <p className="lead text-white text-center">
-            {/* CryptoGym is an interactive training center that teaches you
+            CryptoGym is an interactive training center that teaches you
             blockchain technology one rep at a time. Choose your preferred
-            language and let's get started! */}
-            You already know blockchain is the next biggest thing since protein powder Adderall shots.<br></br>
-            So why are you are still sitting on your lazy developer ass living a decade in the past?<br></br>
-            {/* Ready to quit your dead-end office job and start a crypto startup where your secretary calls you 'Bitcoin Daddy'? */}
-            It's time to hit some reps and get your brain swole on knowledge!
+            language and let's get started!
           </p>
           <div className="d-flex justify-content-center justify-content-around mt-3 mb-2">
             <JSLogo>
@@ -39,6 +35,7 @@ const Home = () => {
                   src={require('../images/js-logo.png')}
                   alt="JavasScript Logo"
                   style={{ height: '240px' }}
+                  id="JSLogo"
                 />
               </Link>
             </JSLogo>
@@ -50,6 +47,7 @@ const Home = () => {
                   src={require('../images/python-logo.png')}
                   alt="Python Logo"
                   style={{ height: '240px' }}
+                  id="PythonLogo"
                 />
                 <h5 className="text-center text-white mt-3 mb-5">
                   Coming Soon

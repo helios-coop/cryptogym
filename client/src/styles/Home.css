@@ -3,3 +3,11 @@
 .quantico {
   font-family: 'Quantico', sans-serif;
 }
+
+#JSLogo, #PythonLogo {
+  transition: transform 1s;
+}
+
+#JSLogo:hover, #PythonLogo:hover {
+  transform: scale(1.1);
+}
