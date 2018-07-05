@@ -60,15 +60,15 @@ export default class Editor extends Component {
           mode="javascript"
           theme="cobalt"
           name="Editor"
-          width="115%"
-          height="100%"
+          width="100%"
+          height="81vh"
           fontSize="16px"
           editorProps={{ $blockScrolling: true }}
         />
         <div
           style={{
             backgroundColor: 'black',
-            width: '115%'
+            width: '100%'
           }}
           className="d-flex justify-content-around"
         >
