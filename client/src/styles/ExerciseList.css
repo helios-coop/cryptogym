@@ -1,8 +1,41 @@
-.card {
+#myShape {
+  height: 250px;
+  width: 250px;
   transition: transform 1s;
+  animation: roll 3s 1;
 }
-.card:hover {
-  background: #ffb256;
-  transform: scale(1.08);
+
+#myShape:hover {
+  transform: scale(1.15);
   font: 40px;
+}
+
+#weightContainer {
+  animation: moveRight 3s 1;
+}
+
+@keyframes roll {
+  from {
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Safari */
+    transform: rotate(0deg);
+  }
+  to {
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Safari */
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes moveRight {
+  from {
+    -ms-transform: translate(-500px, 0); /* IE 9 */
+    -webkit-transform: translate(-500px, 0); /* Safari */
+    transform: translate(-500px, 0);
+  }
+  to {
+    -ms-transform: translate(0px, 0px); /* IE 9 */
+    -webkit-transform: translate(0px, 0px); /* Safari */
+    transform: translate(0px, 0px);
+  }
 }

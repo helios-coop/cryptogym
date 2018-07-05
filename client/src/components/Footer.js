@@ -12,7 +12,7 @@ const Footer = () => {
       >
         Team
       </Link>
-      <div className="text-white" style={{ position: 'fixed', bottom: '16px', right:'3%'}}>© 2018 CryptoGym</div>
+      <div className="text-white" style={{ fontSize: '11px'}}>© 2018 CryptoGym</div>
     </FooterNav>
   );
 };

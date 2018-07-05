@@ -61,6 +61,7 @@ export const ContentContainer = styled.div`
   min-width: 400px;
   width: 34.2vw;
   padding: 30px 40px;
+  overflow: scroll;
 `;
 
 export const EditorContainer = styled.div`
@@ -97,48 +98,23 @@ export const TeamContainer = styled.div`
 `;
 
 export const FooterNav = styled.div`
-  position: fixed;
-  left: 0;
-  bottom: 0;
+  // position: fixed;
+  // left: 0;
+  // bottom: 0;
+  flex-direction: column;
   background: #29323c;
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
   padding: 12px 0;
-`;
-
-export const ConsoleContainer = styled.div`
-  height: calc(100% + 92px);
-  width: 100%;
-  background: black;
-`;
-
-export const Weight = styled.div`
-  height: calc(100% + 92px);
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
-  background: grey;
 `;
 
 export const WeightContainer = styled.div`
   display: flex;
   justify-content: space-around;
-`;
-
-export const WeightContainer2 = styled.p`
-  display: flex;
-  justify-content: space-around;
-  animation: ${rotate360} 2s linear infinite;
-`;
-
-const rotate360 = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
+  flex-wrap: wrap;
+  @media (max-width: 400px) {
+    flex-direction: column;
   }
 `;
