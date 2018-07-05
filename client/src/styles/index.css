@@ -4,10 +4,6 @@ body {
   background-attachment: fixed;
 }
 
-#root {
-  height: 100%;
-
-}
 a {
   font-size: 25px;
 }

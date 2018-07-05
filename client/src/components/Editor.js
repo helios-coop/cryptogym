@@ -62,7 +62,7 @@ export default class Editor extends Component {
         <div
           style={{
             backgroundColor: 'black',
-            width: '100%'
+            width: '115%'
           }}
           className="d-flex justify-content-around"
         >
