@@ -30,6 +30,7 @@ export default class Editor extends Component {
       const crypto = require('crypto');
       const userCode = eval(this.refs.aceEditor.editor.session.getValue());
       eval(this.props.test);
+
       window.mocha.reporter('html').run(function(failures){
         if (failures === 0) console.log('pass!') 
         // play success animation
@@ -39,6 +40,7 @@ export default class Editor extends Component {
           // set error message
           // shake animation
         }
+
       })
     } else console.log(this.refs.aceEditor.editor.session.$annotations); 
     this.props.setConsole('error');
