@@ -19,10 +19,13 @@ export const Logo = styled.img`
 `;
 
 export const HomeContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: 100%;
   min-width: 200px;
   max-width: 1000px;
-  margin: 0 10% 0 10%;
+  margin: 0 auto;
 `;
 
 export const ExerciseNav = styled.div`
@@ -70,7 +73,6 @@ export const EditorContainer = styled.div`
 
 export const CourseHomeContainer = styled.div`
   margin: auto;
-  max-width: 500px;
   padding: 10px;
   color: white;
 `;
@@ -97,7 +99,7 @@ export const FooterNav = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  justify-content: space-around;
+  align-items: baseline;
   padding: 12px 0;
 `;
 
@@ -105,4 +107,33 @@ export const ConsoleContainer = styled.div`
   height: calc(100% + 92px);
   width: 100%;
   background: black;
+`;
+
+export const Weight = styled.div`
+  height: calc(100% + 92px);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  background: grey;
+`;
+
+export const WeightContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+
+export const WeightContainer2 = styled.p`
+  display: flex;
+  justify-content: space-around;
+  animation: ${rotate360} 2s linear infinite;
+`;
+
+const rotate360 = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 `;

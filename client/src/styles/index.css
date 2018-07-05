@@ -6,8 +6,15 @@ body {
 
 #root {
   height: 100%;
-
 }
+
 a {
   font-size: 25px;
+}
+
+@media (max-width: 650px) {
+.mobilecolumn {
+    flex-direction: column;
+    align-items: center;
+  }
 }

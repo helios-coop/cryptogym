@@ -6,11 +6,11 @@ import { TeamContainer } from '../styles/styles.js';
 const Team = () => {
   return (
     <TeamContainer>
-      <h2 className="mt-5 text-center" style={{ color: '#ffb256' }}>
+      <h2 className="mt-5 text-center" style={{ color: '#ffb256'}}>
         TEAM
       </h2>
-      <div className="d-flex justify-content-center mt-5">
-        <div className="mx-5 ">
+      <div className="d-flex justify-content-center mt-5 mobilecolumn">
+        <div className="mt-5 mx-5 ">
           <img
             className=" rounded-circle"
             style={{ height: '240px' }}
@@ -56,7 +56,7 @@ const Team = () => {
             </a> */}
           </div>
         </div>
-        <div className="mx-5">
+        <div className="mt-5 mx-5">
           <img
             className="rounded-circle"
             style={{ height: '240px' }}

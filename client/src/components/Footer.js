@@ -4,15 +4,15 @@ import { FooterNav } from '../styles/styles.js';
 
 const Footer = () => {
   return (
-    <FooterNav className="border-top border-warning">
-      <div className="text-white">© 2018 CryptoGym</div>
+    <FooterNav>
       <Link
         className="text-white"
-        style={{ textDecoration: 'none' }}
+        style={{ textDecoration: 'none', fontSize: '20px'}}
         to="/team"
       >
         Team
       </Link>
+      <div className="text-white" style={{ position: 'fixed', bottom: '16px', right:'3%'}}>© 2018 CryptoGym</div>
     </FooterNav>
   );
 };
