@@ -9,6 +9,9 @@ import 'brace/mode/javascript';
 import 'brace/theme/cobalt';
 
 export default class Editor extends Component {
+  state = {
+    error: ''
+  }
 
   componentDidUpdate() {
     this.refs.aceEditor.editor.session.setValue(this.props.defaultCode);
@@ -27,17 +30,18 @@ export default class Editor extends Component {
       const crypto = require('crypto');
       const userCode = eval(this.refs.aceEditor.editor.session.getValue());
       eval(this.props.test);
-      window.mocha.run(function(failures){
+      window.mocha.reporter('html').run(function(failures){
         if (failures === 0) console.log('pass!') 
         // play success animation
         // unlock next lesson
         else {
+          
           // set error message
           // shake animation
         }
       })
     } else console.log(this.refs.aceEditor.editor.session.$annotations); 
-    // set error message
+    this.props.setConsole('error');
   };
 
   handleReset = () => {
@@ -49,23 +53,20 @@ export default class Editor extends Component {
   render() {
     return (
       <EditorContainer>
-        <BouncyDiv>
-          <p>hie3</p>
-          </BouncyDiv>
         <AceEditor
           ref="aceEditor"
           mode="javascript"
           theme="cobalt"
           name="Editor"
-          width="115%"
-          height="100%"
+          width="100%"
+          height="81vh"
           fontSize="16px"
           editorProps={{ $blockScrolling: true }}
         />
         <div
           style={{
             backgroundColor: 'black',
-            width: '115%'
+            width: '100%'
           }}
           className="d-flex justify-content-around"
         >

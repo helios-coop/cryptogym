@@ -186,7 +186,6 @@ body {
   height: 100%;
   display: block;
   word-wrap: break-word;
-
   float: left;
   clear: left;
   font: 12px/1.5 monaco, monospace;
@@ -199,9 +198,7 @@ body {
   max-width: calc(100% - 42px); /*(2)*/
   word-wrap: break-word;
   border-bottom-color: #ddd;
-  -webkit-box-shadow: 0 1px 3px #eee;
-  -moz-box-shadow: 0 1px 3px #eee;
-  box-shadow: 0 1px 3px #eee;
+
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
