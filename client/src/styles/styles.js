@@ -67,10 +67,12 @@ export const CourseHomeContainer = styled.div`
 export const WeightContainer = styled.div`
   max-width: 1570px;
   display: flex;
+  margin: auto;
   justify-content: space-around;
   flex-wrap: wrap;
   @media (max-width: 400px) {
     flex-direction: column;
+    align-items: center;
   }
 `;
 
@@ -78,7 +80,7 @@ export const WeightContainer = styled.div`
 
 export const BNav = styled.div`
 display: flex;
-justify-content: space-evenly;
+justify-content: space-between;
 width: 100vw;
 background: #29323c
 position: fixed;
@@ -87,7 +89,6 @@ padding: 2px 10%;
 z-index: 5;
 
 @media (max-width: 1200px) {
-  justify-content: space-between;
   padding: 2px 3%;
   }
 `;
