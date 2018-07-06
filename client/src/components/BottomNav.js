@@ -9,6 +9,12 @@ const BottomNav = props => {
   const redirectPrev = () => {
     props.prev();
   };
+  const handleReset = () => {
+    props.reset();
+  };
+  const handleSubmit = () => {
+    props.submit();
+  };
 
   return (
     <BNav>
