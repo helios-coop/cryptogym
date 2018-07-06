@@ -71,13 +71,18 @@ export const WeightContainer = styled.div`
 
 export const BNav = styled.div`
 display: flex;
-justify-content: space-around;
+justify-content: space-evenly;
 width: 100vw;
 background: #29323c
 position: fixed;
 bottom: 0;
-padding: 2px 0;
+padding: 2px 10%;
 z-index: 5;
+
+@media (max-width: 1200px) {
+  justify-content: space-between;
+  padding: 2px 10%;
+  }
 `;
 
 
@@ -118,4 +123,15 @@ export const ConsoleContainer = styled.div`
   min-width: 400px;
   width: 34vw;
   background: black;
+`;
+
+export const EditorNav = styled.div`
+  display: flex;
+  right: 0;
+  width: 100vw;
+  position: fixed;
+  bottom: 2px;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
 `;

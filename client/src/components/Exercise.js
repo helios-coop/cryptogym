@@ -64,7 +64,7 @@ class Exercise extends Component {
           />
           <Console message={this.state.console}/>
         </ExerciseContainer>
-        <BottomNav prev={this.previous} next={this.next} />
+        <BottomNav prev={this.previous} next={this.next}/>
       </div>
     );
   }
