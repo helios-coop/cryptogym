@@ -13,3 +13,9 @@
 #PythonLogo:hover {
   transform: scale(1.1);
 }
+
+#pythonComingSoon {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+}
