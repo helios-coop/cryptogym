@@ -38,9 +38,8 @@ export const TeamContainer = styled.div`
 `;
 
 export const FooterNav = styled.div`
-  // position: fixed;
-  // left: 0;
-  // bottom: 0;
+  position: fixed;
+  bottom: 0;
   flex-direction: column;
   background: #29323c;
   width: 100%;
@@ -48,6 +47,13 @@ export const FooterNav = styled.div`
   justify-content: center;
   align-items: center;
   padding: 12px 0;
+
+  @media (max-width: 830px) {
+    position: static;
+    }
+  @media (max-height: 780px) {
+      position: static;
+    }
 `;
 
 // COURSE HOME STYLES
@@ -93,9 +99,7 @@ min-width: 1200px;
 `;
 
 export const ContentContainer = styled.div`
-// height: calc(100% + 92px);
-//height: 100% - 20px;
-height: 86vh;
+height: calc(100vh - 100px);
 font-size: 1.2em;
 text-align: left;
 background: #fffff0;
@@ -107,8 +111,7 @@ overflow: auto;
 `;
 
 export const EditorContainer = styled.div`
-// height: 100%;
-height: 86vh;
+height: calc(100vh - 100px);
 min-width: 400px;
 width: 31.8vw;
 `;
@@ -119,7 +122,7 @@ export const ExerciseNav = styled.div`
 `;
 
 export const ConsoleContainer = styled.div`
-  height: 86vh;
+  height: calc(100vh - 100px);
   min-width: 400px;
   width: 34vw;
   background: black;

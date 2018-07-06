@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { FooterNav } from '../styles/styles.js';
 
 const Footer = () => {

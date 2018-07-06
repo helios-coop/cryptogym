@@ -1,6 +1,5 @@
 import React from 'react';
 import { TNav, Logo } from '../styles/styles.js';
-import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import '../styles/team.css';
 
