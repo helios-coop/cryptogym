@@ -4,6 +4,32 @@
   font-family: 'Quantico', sans-serif;
 }
 
+.heading {
+  font-size: 3.8em;
+  -webkit-text-stroke: 2px #fd5f00;
+}
+
+.beta {
+  font-size: 0.3em;
+  -webkit-text-stroke: 0px;
+}
+
+.sub-heading {
+  -webkit-text-stroke: 0.5px #00f9ff;
+}
+
+.lang-logo-title:hover {
+  color: #ffb256;
+}
+
+.lang-logo-title-js {
+  color: #eeda5a;
+}
+
+.lang-logo-title-py {
+  color: #4180ed;
+}
+
 #JSLogo,
 #PythonLogo {
   transition: transform 1s;
@@ -18,4 +44,14 @@
   position: absolute;
   height: 100px;
   width: 100px;
+}
+
+@media (max-width: 500px) {
+  .heading {
+    font-size: 3.2em;
+    -webkit-text-stroke-width: 1.5px;
+  }
+  .lang-logo-title {
+    font-size: 1.1em;
+  }
 }
