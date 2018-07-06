@@ -64,18 +64,30 @@ export default class Editor extends Component {
           editorProps={{ $blockScrolling: true }}
         />
         <EditorNav>
-        <Button color="light" onClick={this.handleSubmit} style={{ margin: '0 3%'}}active>
-        Lift{' '}
-        <span role="img" aria-label="arm flex">
-          &#128170;
-        </span>
-        </Button>
-        <Button color="light" onClick={this.handleReset} style={{ margin: '0 3%'}} active>
-          Reset{' '}
-          <span role="img" aria-label="recycle emoji">
-          &#9850;
-          </span>
-        </Button>
+          <Button
+            className="px-1"
+            color="light"
+            onClick={this.handleSubmit}
+            style={{ margin: '0 3%' }}
+            active
+          >
+            Lift{' '}
+            <span role="img" aria-label="arm flex">
+              &#128170;
+            </span>
+          </Button>
+          <Button
+            className="px-1"
+            color="light"
+            onClick={this.handleReset}
+            style={{ margin: '0 3%' }}
+            active
+          >
+            Reset{' '}
+            <span role="img" aria-label="recycle emoji">
+              &#9850;
+            </span>
+          </Button>
         </EditorNav>
       </EditorContainer>
     );
