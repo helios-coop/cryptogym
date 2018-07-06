@@ -29,8 +29,8 @@ export const JSLogo = styled.div`
 
 export const PythonLogo = styled.div`
   margin: 0 25% 0 5%;
-`
-;
+`;
+
 export const TeamContainer = styled.div`
   left: 0;
   bottom: 0;
