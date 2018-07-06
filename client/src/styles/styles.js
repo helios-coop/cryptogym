@@ -3,24 +3,24 @@ import styled from 'styled-components';
 // HOMEPAGE STYLES
 
 export const TNav = styled.div`
-display: flex;
-justify-content: space-between;
-margin: 0 20px;
-max-height: 100px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+  max-height: 100px;
 `;
 
 export const Logo = styled.img`
-height: 100px;
+  height: 100px;
 `;
 
 export const HomeContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-height: 100%;
-min-width: 200px;
-max-width: 1000px;
-margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  min-width: 200px;
+  max-width: 1000px;
+  margin: 0 auto;
 `;
 
 export const JSLogo = styled.div`
@@ -50,10 +50,10 @@ export const FooterNav = styled.div`
 
   @media (max-width: 830px) {
     position: static;
-    }
+  }
   @media (max-height: 780px) {
-      position: static;
-    }
+    position: static;
+  }
 `;
 
 // COURSE HOME STYLES
@@ -87,33 +87,32 @@ z-index: 5;
 
 @media (max-width: 1200px) {
   justify-content: space-between;
-  padding: 2px 10%;
+  padding: 2px 3%;
   }
 `;
 
-
 export const ExerciseContainer = styled.div`
-display: flex;
-justify-content: center;
-min-width: 1200px;
+  display: flex;
+  justify-content: center;
+  min-width: 1200px;
 `;
 
 export const ContentContainer = styled.div`
-height: calc(100vh - 100px);
-font-size: 1.2em;
-text-align: left;
-background: #fffff0;
-color: black;
-min-width: 400px;
-width: 34.2vw;
-padding: 30px 40px;
-overflow: auto;
+  height: calc(100vh - 100px);
+  font-size: 1.2em;
+  text-align: left;
+  background: #fffff0;
+  color: black;
+  min-width: 400px;
+  width: 34.2vw;
+  padding: 30px 40px;
+  overflow: auto;
 `;
 
 export const EditorContainer = styled.div`
-height: calc(100vh - 100px);
-min-width: 400px;
-width: 31.8vw;
+  height: calc(100vh - 100px);
+  min-width: 400px;
+  width: 31.8vw;
 `;
 
 export const ExerciseNav = styled.div`
