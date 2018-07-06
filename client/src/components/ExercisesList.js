@@ -43,11 +43,6 @@ export default class ExercisesList extends Component {
                 to={`/l${this.props.match.url}/ex/${index + 1}/set/1/rep/1`}
                 style={{ textDecoration: 'none' }}
               >
-                {/* <Card body outline color="warning" className="my-3" key={index}>
-                <CardTitle className="text-center text-dark h4">
-                  {exerciseName}
-                </CardTitle>
-              </Card> */}
                 <svg
                   id="myShape"
                   xmlns="http://www.w3.org/2000/svg"
@@ -95,13 +90,13 @@ export default class ExercisesList extends Component {
                       <tspan>{exerciseName}</tspan>
                     </textPath>
                   </text>
-                  <text x="36" y="136" fill="white" font-weight="bold">
-                    20.5
+                  <text x={ index > 1 ? 40 : 44} y="136" fill="white" font-weight="bold">
+                  {((index > 1 ? index * 10 + 5 : index * 5 + 5) / 2.2).toFixed(1)}
                   </text>
                   <text x="48" y="156" fill="white" font-weight="bold">
                     KG
                   </text>
-                  <text x="170" y="136" fill="white" font-weight="bold">
+                  <text x={index > 0 ? 170 : 176} y="136" fill="white" font-weight="bold">
                     {index > 1 ? index * 10 + 5 : index * 5 + 5}
                   </text>
                   <text x="171" y="156" fill="white" font-weight="bold">

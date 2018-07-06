@@ -65,6 +65,7 @@ export const CourseHomeContainer = styled.div`
 `;
 
 export const WeightContainer = styled.div`
+  max-width: 1570px;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
