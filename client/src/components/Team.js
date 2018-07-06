@@ -1,6 +1,6 @@
 import React from 'react';
 import FontAwesome from 'react-fontawesome';
-
+import Footer from './Footer';
 import { TeamContainer } from '../styles/styles.js';
 
 const Team = () => {
@@ -35,28 +35,12 @@ const Team = () => {
                 style={{ color: 'white' }}
               />
             </a>
-
-            {/* 
-            Add website and email later
-            <a href="">
-              <FontAwesome
-                className="px-2"
-                name="globe"
-                size="1x"
-                style={{ color: 'white' }}
-              />
+            `<a href="https://medium.com/@jeremy.a.jones">
+              <FontAwesome name="medium" size="1x" style={{ color: 'white' }} />
             </a>
-            <a href="">
-              <FontAwesome
-                className="px-2"
-                name="envelope"
-                size="1x"
-                style={{ color: 'white' }}
-              />
-            </a> */}
           </div>
         </div>
-        <div className="mt-5 mx-5">
+        <div className="my-5 mx-5">
           <img
             className="rounded-circle"
             style={{ height: '240px' }}
@@ -81,27 +65,19 @@ const Team = () => {
                 style={{ color: 'white' }}
               />
             </a>
-            {/* 
-            Add website and email later
-            <a href="">
+
+            <a href="https://medium.com/@justinkaseman">
               <FontAwesome
                 className="px-2"
-                name="globe"
+                name="medium"
                 size="1x"
                 style={{ color: 'white' }}
               />
             </a>
-            <a href="">
-              <FontAwesome
-                className="px-2"
-                name="envelope"
-                size="1x"
-                style={{ color: 'white' }}
-              />
-            </a> */}
           </div>
         </div>
       </div>
+      <Footer />
     </TeamContainer>
   );
 };
