@@ -68,7 +68,6 @@ export default class Editor extends Component {
             className="px-1"
             color="light"
             onClick={this.handleSubmit}
-            style={{ margin: '0 3%' }}
             active
           >
             Lift{' '}
@@ -80,7 +79,6 @@ export default class Editor extends Component {
             className="px-1"
             color="light"
             onClick={this.handleReset}
-            style={{ margin: '0 3%' }}
             active
           >
             Reset{' '}
