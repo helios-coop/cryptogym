@@ -40,7 +40,8 @@ const Home = () => {
               </Link>
             </JSLogo>
             <PythonLogo>
-              <Link to="/python" style={{ textDecoration: 'none' }}>
+              <Link to="#" style={{ textDecoration: 'none' }}>
+              {/* to='/python' */}
                 <h3 className="text-center text-white my-4 quantico">Python</h3>
                 <Media
                   object
