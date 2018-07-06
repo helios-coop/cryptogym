@@ -167,7 +167,7 @@ module.exports = {
       },
       {
         id: 020000,
-        exerciseName: 'SMART CONTRACTS',
+        exerciseName: 'CONTRACTS',
         sets: []
       }
     ]

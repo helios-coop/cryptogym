@@ -46,7 +46,7 @@ export default class Editor extends Component {
         }
       });
     } else console.log(this.refs.aceEditor.editor.session.$annotations);
-    this.props.setConsole('error');
+    this.props.setConsole('SET ME IN EDITOR COMPONENT');
   };
 
   render() {

@@ -33,7 +33,8 @@ body {
 
 #mocha h1 a {
   text-decoration: none;
-  color: inherit;
+  color: #c00;
+  pointer-events: none;
 }
 
 #mocha h1 a:hover {
