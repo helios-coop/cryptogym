@@ -2,6 +2,7 @@ import React from 'react';
 import { TNav, Logo } from '../styles/styles.js';
 import { Button } from 'reactstrap';
 import { Link } from 'react-router-dom';
+import '../styles/team.css';
 
 const TopNav = () => {
   return (
@@ -13,14 +14,18 @@ const TopNav = () => {
           style={{ height: '70px' }}
         />
       </Link>
-      <Button
-        color="danger"
-        size="sm"
-        style={{ height: '40px', marginTop: '10px' }}
-        active
+      <Link
+        className="team quantico"
+        style={{
+          textDecoration: 'none',
+          fontSize: '20px',
+          height: '40px',
+          marginTop: '10px'
+        }}
+        to="/team"
       >
-        Login
-      </Button>
+        TEAM
+      </Link>
     </TNav>
   );
 };

@@ -71,7 +71,7 @@ export default class Editor extends Component {
             position: 'absolute',
             bottom: '41px',
             left: 'calc(400px + 33%);',
-            zIndex: '10',
+            zIndex: '10'
           }}
           className="d-flex justify-content-around"
         >
@@ -84,7 +84,7 @@ export default class Editor extends Component {
           <Button color="light" onClick={this.handleReset} active>
             Reset{' '}
             <span role="img" aria-label="recycle emoji">
-            &#9850;
+              &#9850;
             </span>
           </Button>
         </div>
