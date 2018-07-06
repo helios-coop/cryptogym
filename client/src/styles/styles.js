@@ -130,12 +130,14 @@ export const ConsoleContainer = styled.div`
 `;
 
 export const EditorNav = styled.div`
-  display: flex;
+  width: 200px;
   right: 0;
-  width: 100vw;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
   position: fixed;
   bottom: 2px;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   z-index: 10;
 `;
