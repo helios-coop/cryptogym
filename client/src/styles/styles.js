@@ -41,7 +41,8 @@ export const FooterNav = styled.div`
   position: fixed;
   bottom: 0;
   flex-direction: column;
-  background: #29323c;
+  // background: #29323c;
+  background: #151c24;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -79,17 +80,18 @@ export const WeightContainer = styled.div`
 // EXERCISE STYLES
 
 export const BNav = styled.div`
-display: flex;
-justify-content: space-between;
-width: 100vw;
-background: #29323c
-position: fixed;
-bottom: 0;
-padding: 2px 10%;
-z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+  // background: #29323c
+  background: #151c24;
+  position: fixed;
+  bottom: 0;
+  padding: 2px 10%;
+  z-index: 5;
 
-@media (max-width: 1200px) {
-  padding: 2px 3%;
+  @media (max-width: 1200px) {
+    padding: 2px 3%;
   }
 `;
 
@@ -103,12 +105,16 @@ export const ContentContainer = styled.div`
   height: calc(100vh - 100px);
   font-size: 1.2em;
   text-align: left;
-  background: #fffff0;
-  color: black;
+  background: #093145;
+  color: white;
   min-width: 400px;
   width: 34.2vw;
   padding: 30px 40px;
   overflow: auto;
+
+  h2 {
+    color: #efd469;
+  }
 `;
 
 export const EditorContainer = styled.div`
@@ -140,4 +146,14 @@ export const EditorNav = styled.div`
   display: flex;
   justify-content: space-evenly;
   z-index: 10;
+
+  button {
+    margin: 0 50%;
+  }
+
+  @media (max-width: 700px) {
+    button {
+      margin: 0 5%;
+    }
+  }
 `;

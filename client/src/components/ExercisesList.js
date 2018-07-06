@@ -40,7 +40,11 @@ export default class ExercisesList extends Component {
           {this.state.exercises.map((exerciseName, index) => {
             return (
               <Link
-                to={index > 0 ? '#' : `/l${this.props.match.url}/ex/${index + 1}/set/1/rep/1`}
+                to={
+                  index > 0
+                    ? '#'
+                    : `/l${this.props.match.url}/ex/${index + 1}/set/1/rep/1`
+                }
                 style={{ textDecoration: 'none' }}
               >
                 <svg
@@ -77,7 +81,8 @@ export default class ExercisesList extends Component {
                     stroke-width="10"
                     fill="rgb(44, 44, 44)"
                   />
-                  <circle cx="125" cy="130" r="14" fill="#29323c" />
+                  <circle cx="125" cy="130" r="14" fill="#151c24" />
+
                   <text
                     id="myText"
                     fill="white"
@@ -90,23 +95,43 @@ export default class ExercisesList extends Component {
                       <tspan>{exerciseName}</tspan>
                     </textPath>
                   </text>
-                  <text x={ index > 1 ? 40 : 44} y="136" fill="white" font-weight="bold">
-                  {((index > 1 ? index * 10 + 5 : index * 5 + 5) / 2.2).toFixed(1)}
+                  <text
+                    x={index > 1 ? 40 : 44}
+                    y="136"
+                    fill="white"
+                    font-weight="bold"
+                  >
+                    {(
+                      (index > 1 ? index * 10 + 5 : index * 5 + 5) / 2.2
+                    ).toFixed(1)}
                   </text>
                   <text x="48" y="156" fill="white" font-weight="bold">
                     KG
                   </text>
-                  <text x={index > 0 ? 170 : 176} y="136" fill="white" font-weight="bold">
+                  <text
+                    x={index > 0 ? 170 : 176}
+                    y="136"
+                    fill="white"
+                    font-weight="bold"
+                  >
                     {index > 1 ? index * 10 + 5 : index * 5 + 5}
                   </text>
                   <text x="171" y="156" fill="white" font-weight="bold">
                     LB
                   </text>
-                  { index > 0 ?
-                  <text class="comingsoon" x="30" y="200" fill="#ffb256" font-weight="bold" font-size="28px" font-family="Quantico">
-                    COMING SOON
-                  </text>
-                  : null}
+                  {index > 0 ? (
+                    <text
+                      class="comingsoon"
+                      x="30"
+                      y="200"
+                      fill="#ffb256"
+                      font-weight="bold"
+                      font-size="28px"
+                      font-family="Quantico"
+                    >
+                      COMING SOON
+                    </text>
+                  ) : null}
                 </svg>
               </Link>
             );
