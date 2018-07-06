@@ -1,0 +1,7 @@
+.team {
+  color: #79a7ea;
+}
+
+.team:hover {
+  color: #ffb256;
+}

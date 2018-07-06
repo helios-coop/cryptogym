@@ -4,10 +4,12 @@
   font-family: 'Quantico', sans-serif;
 }
 
-#JSLogo, #PythonLogo {
+#JSLogo,
+#PythonLogo {
   transition: transform 1s;
 }
 
-#JSLogo:hover, #PythonLogo:hover {
+#JSLogo:hover,
+#PythonLogo:hover {
   transform: scale(1.1);
 }
