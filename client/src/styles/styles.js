@@ -19,7 +19,7 @@ export const HomeContainer = styled.div`
   justify-content: center;
   height: 100%;
   min-width: 200px;
-  max-width: 1000px;
+  max-width: 850px;
   margin: 0 auto;
 `;
 
