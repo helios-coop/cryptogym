@@ -8,7 +8,7 @@
     "node": "8.11.3"
   },
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "license": "ISC",
   "dependencies": {
