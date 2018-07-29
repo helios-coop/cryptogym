@@ -26,16 +26,13 @@ const data = [
   // YOUR CODE GOES HERE
 
 }
-                
-module.exports = {
-  Blockchain
-};`,
+`,
                 prevUrl: '/javascript',
                 nextUrl: '/l/javascript/ex/1/set/1/rep/2'
               },
               {
                 id: 010102,
-                text: `## Blocks\n Our empty blockchain is looking a little weak. Let's add in some blocks to beef it up. To keep things simple let's set up a constructor with only the most essential parts: \n \n * \`previousHash:\` A reference to the hash of the previous block.\n\n * \`index:\` The location of the block in the blockchain. Also called height. \n\n *  \`timestamp:\` A timestamp of creation \n \n * \`data:\` This could be your payment to buy that 10 gallon tub of protein powder or a log of how much you just PR'd on bench. Usually this data is encoded and encrypted in a [Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree), but we will revisit this concept later. For now set data to the data arguement passed in to the constructor. \n\n * \`hash:\` A sha256 hash taken from the content of the block. We will dive into this deeper in the next rep so leave it as Undefined for now`,
+                text: `## Blocks\n Our empty blockchain is looking a little weak. Let's add in some blocks to beef it up. To keep things simple let's set up a constructor with only the most essential parts: \n \n * \`previousHash:\` A reference to the hash of the previous block.\n\n * \`index:\` The location of the block in the blockchain. Also called height. \n\n *  \`timestamp:\` A timestamp of creation \n \n * \`data:\` This could be your payment to buy that 10 gallon tub of protein powder or a log of how much you just PR'd on bench. Usually this data is encoded and encrypted in a [Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree), but we will revisit this concept later. For now set data to the data arguement passed in to the constructor. \n\n * \`hash:\` A sha256 hash taken from the content of the block. We will dive into this deeper in the next rep so leave it as Null for now`,
                 test: `describe('Block constructor', () => {
                   const block = userCode.Block;
                   const testblock = new block(0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f, 1, '4/15/2018', { amt: 5 });
@@ -51,20 +48,16 @@ module.exports = {
                   it('The Block should have some data', () => {
                     window.chai.expect(testblock.data.amt).to.equal(5);
                   });
-                  it('The Block should have a hash of undefined for now', () => {
-                    window.chai.expect(testblock.hash).to.equal(undefined);
+                  it('The Block should have a hash of Null', () => {
+                    window.chai.expect(testblock.hash).to.equal(null);
                   });
                 })`,
-                placeholder: `
-class Block {
+                placeholder: `class Block {
 
   // YOUR CODE GOES HERE
   
 }
-
-module.exports = {
-  Block
-};`,
+`,
                 prevUrl: '/l/javascript/ex/1/set/1/rep/1',
                 nextUrl: '/l/javascript/ex/1/set/1/rep/3'
               },
@@ -82,15 +75,14 @@ module.exports = {
                     window.chai.expect(testblock.length).to.equal(5);
                   });
                 })`,
-                placeholder: `
-class Block {
+                placeholder: `class Block {
 
   constructor(previousHash, index, timestamp, data) {
     this.index = index;
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
-    this.hash = undefined;
+    this.hash = null;
   }
 
   calculateHash() {
@@ -99,10 +91,7 @@ class Block {
 
   }
 }
-
-module.exports = {
-  Block
-};`,
+`,
                 prevUrl: '/l/javascript/ex/1/set/1/rep/2',
                 nextUrl: '/l/javascript/ex/1/set/2/rep/1'
               }
@@ -141,6 +130,7 @@ module.exports = {
                         .toString();
                     }
                   }
+
                   const chain = userCode.Blockchain;
                   const testchain = new chain();
                   const block1 = new Block(0, '01/01/2018', 'Genesis', '0');
@@ -149,6 +139,7 @@ module.exports = {
                   testchain.blocks.push(block1)
                   testchain.blocks.push(block2)
                   testchain.blocks.push(block3)
+
                   it('Returns True if valid', () => {
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(true);
@@ -163,12 +154,12 @@ module.exports = {
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(false);
                   });
-                  it('Returns False if block's own hash changes', () => {
+                  it('Returns False if blocks own hash changes', () => {
                     testchain.blocks[0].hash = '0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(false);
                   });
-                  it('Returns False if block's previous hash changes', () => {
+                  it('Returns False if blocks previous hash changes', () => {
                     testchain.blocks[1].hash = '0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(false);
@@ -186,10 +177,7 @@ module.exports = {
   }
   
 }
-                
-module.exports = {
-  Blockchain
-};`,
+`,
                 prevUrl: '/l/javascript/ex/1/set/1/rep/3',
                 nextUrl: 'null'
               }

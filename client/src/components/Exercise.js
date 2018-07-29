@@ -21,6 +21,8 @@ class Exercise extends Component {
   };
 
   previous = () => {
+    let testSpecs = document.getElementById('mocha-report');
+    if (testSpecs) testSpecs.remove();
     if (this.state.currentContent.prevUrl === '/javascript')
       this.props.history.push('/javascript');
     else if (this.state.currentContent.prevUrl === '/python')
@@ -38,6 +40,8 @@ class Exercise extends Component {
   };
 
   next = () => {
+    let testSpecs = document.getElementById('mocha-report');
+    if (testSpecs) testSpecs.remove();
     axios
       .get(`http://localhost:5000${this.state.currentContent.nextUrl}`)
       .then(response => {
@@ -49,8 +53,22 @@ class Exercise extends Component {
       });
   };
 
-  setConsole = (message) => {
-    this.setState({console: [message]})
+  setConsole = (message, code) => {
+    this.setState({console: [message], currentContent: { ...this.state.currentContent, placeholder: code }})
+  };
+
+  handleReset = () => {
+    let testSpecs = document.getElementById('mocha-report');
+    if (testSpecs) testSpecs.remove();
+    const { language, ex, set, rep } = this.props.match.params;
+    axios
+      .get(`http://localhost:5000/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      .then(response => {
+        this.setState({ currentContent: response.data });
+      })
+      .catch(error => {
+        console.log(`There was an error getting content: ${error}`);
+      });
   };
 
   render() {
@@ -62,6 +80,7 @@ class Exercise extends Component {
             test={this.state.currentContent.test}
             defaultCode={this.state.currentContent.placeholder}
             setConsole={this.setConsole}
+            handleReset={this.handleReset}
           />
           <Console message={this.state.console}/>
         </ExerciseContainer>
