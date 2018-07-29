@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { EditorContainer, EditorNav } from '../styles/styles.js';
+import axios from 'axios';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
 import '../styles/mocha.css';
@@ -9,18 +10,12 @@ import 'brace/theme/cobalt';
 
 export default class Editor extends Component {
   state = {
-    error: ''
+    default: ''
   };
 
   componentDidUpdate() {
     this.refs.aceEditor.editor.session.setValue(this.props.defaultCode);
   }
-
-  handleReset = () => {
-    let testSpecs = document.getElementById('mocha-report');
-    if (testSpecs) testSpecs.remove();
-    this.refs.aceEditor.editor.session.setValue(this.props.defaultCode);
-  };
 
   handleSubmit = () => {
     if (window.mocha.suite.suites[0]) {
@@ -33,9 +28,12 @@ export default class Editor extends Component {
 
     if (this.refs.aceEditor.editor.session.$annotations.length === 0) {
       const crypto = require('crypto');
-      const userCode = eval(this.refs.aceEditor.editor.session.getValue());
+      const currentClass = /\sBlock\s/.test(this.props.defaultCode) ? "Block" : 'Blockchain';
+      const userCode = eval(this.refs.aceEditor.editor.session.getValue() + `module.exports = {
+        ${currentClass}
+      };`);
       eval(this.props.test);
-
+      
       window.mocha.reporter('html').run(function(failures) {
         if (failures === 0) console.log('pass!');
         // play success animation
@@ -45,8 +43,14 @@ export default class Editor extends Component {
           // shake animation
         }
       });
-    } else console.log(this.refs.aceEditor.editor.session.$annotations);
-    this.props.setConsole('SET ME IN EDITOR COMPONENT');
+    } else {
+      let errorString = '';
+      for (let i = 0; i < this.refs.aceEditor.editor.session.$annotations.length; i++) {
+        errorString += this.refs.aceEditor.editor.session.$annotations[i].text;
+        errorString += '\n'
+      }
+      this.props.setConsole(errorString, this.refs.aceEditor.editor.session.getValue());
+    }
   };
 
   render() {
@@ -61,6 +65,7 @@ export default class Editor extends Component {
           height="100%"
           fontSize="16px"
           wrapEnabled={true}
+          $blockScrolling = {Infinity}
           editorProps={{ $blockScrolling: true }}
         />
         <EditorNav>
@@ -75,7 +80,7 @@ export default class Editor extends Component {
           <Button
             className="px-3"
             color="light"
-            onClick={this.handleReset}
+            onClick={this.props.handleReset}
             active
           >
             Reset
