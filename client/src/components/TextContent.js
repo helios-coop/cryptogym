@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Markdown } from 'react-showdown';
+import ReactMarkdown from 'react-markdown';
 
 import { ContentContainer } from '../styles/styles.js';
 
@@ -7,7 +7,7 @@ export default class TextContent extends Component {
   render() {
     return (
       <ContentContainer>
-        <Markdown markup={this.props.text} />
+        <ReactMarkdown source={this.props.text} escapeHtml={false}/>
       </ContentContainer>
     );
   }

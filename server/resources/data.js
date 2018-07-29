@@ -12,9 +12,9 @@ const data = [
             reps: [
               {
                 id: 010101,
-                text: `## What is a blockchain?\n  A blockchain is literally a chain of blocks. In other words, it's simply a data structure where each block contains a reference to the previous block, some data, and a secure digital fingerprint known as a _hash._\n\nTo generate a hash, a block is run though a cryptographic hash function that outputs a fixed length alphanumeric string. This hash is placed into the next block, so that it has a reference back to the previous block's hash. If any part of a block is mutated after it's been created, the hash would also change. Therefore, all subsequent blocks would contain an incorrect previous hash. This is the fundamental idea behind a blockchain. It is _immutable._ \n\n Initialize a variable called <code>blocks</code> to an empty array.`,
+                text: `## So what is a blockchain? \n A blockchain is a distributed decentralized tamper-proof list of records. \n \n Most people's eyes will glaze over just from reading this, but let's break it into smaller parts. The structure is actually fairly simple and vital to its security. \n \n Each record (called a block) contains some hashed and encoded data, a secure digital fingerprint known as a _hash_, and a reference to the previous block's hash. \n\n To generate the very important hash, the whole block is run though a [cryptographic hash function] (https://simple.wikipedia.org/wiki/Cryptographic_hash_function). If any part of a block is later mutated even just by a single letter, the entire hash would be different. This would cause the link to the subsequent block to break because its hash is no longer matches the reference that next block has of it. This is a fundamental concept behind a blockchain. They are **resistant to tampering.** \n\n Let's set up our blockchain class with a property called \` blocks \` with an empty array so we have somewhere to put our blocks.`,
                 test: `describe('Blockchain constructor', () => {
-                  it('The blockchain should hold an array called blocks', () => {
+                  it('The blockchain should hold an empty array called blocks', () => {
                     const chain = userCode.Blockchain;
                     const testchain = new chain();
                     window.chai.expect(testchain.blocks.length).to.equal(0);
@@ -35,12 +35,24 @@ module.exports = {
               },
               {
                 id: 010102,
-                text: `## Blocks\n Our empty blockchain is looking lonely. Let's add in some blocks. To keep things simple let's add only to the most essential parts: \n \n \`previousHash:\` A reference to the hash of the previous block.\n\n\`index:\` The location of the block in the blockchain \n\n\`timestamp:\` A timestamp \n \n \`data:\` This could be your payment to buy that 10 gallon tub of protein powder or a log of how much you PR'd on bench.\n\n \`hash:\` A sha256 hash taken from the content of the block.`,
+                text: `## Blocks\n Our empty blockchain is looking a little weak. Let's add in some blocks to beef it up. To keep things simple let's set up a constructor with only the most essential parts: \n \n * \`previousHash:\` A reference to the hash of the previous block.\n\n * \`index:\` The location of the block in the blockchain. Also called height. \n\n *  \`timestamp:\` A timestamp of creation \n \n * \`data:\` This could be your payment to buy that 10 gallon tub of protein powder or a log of how much you just PR'd on bench. Usually this data is encoded and encrypted in a [Merkle Tree](https://en.wikipedia.org/wiki/Merkle_tree), but we will revisit this concept later. For now set data to the data arguement passed in to the constructor. \n\n * \`hash:\` A sha256 hash taken from the content of the block. We will dive into this deeper in the next rep so leave it as Undefined for now`,
                 test: `describe('Block constructor', () => {
-                  it('The Block should have a previous hash, timestamp, index, data, and hash', () => {
-                    const block = userCode.Block;
-                    const testblock = new block();
-                    window.chai.expect(testblock.length).to.equal(5);
+                  const block = userCode.Block;
+                  const testblock = new block(0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f, 1, '4/15/2018', { amt: 5 });
+                  it('The Block should have a previous hash', () => {
+                    window.chai.expect(testblock.previousHash).to.equal(0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f);
+                  });
+                  it('The Block should have an index', () => {
+                    window.chai.expect(testblock.index).to.equal(1);
+                  });
+                  it('The Block should have a timestamp', () => {
+                    window.chai.expect(testblock.timestamp).to.equal('4/15/2018');
+                  });
+                  it('The Block should have some data', () => {
+                    window.chai.expect(testblock.data.amt).to.equal(5);
+                  });
+                  it('The Block should have a hash of undefined for now', () => {
+                    window.chai.expect(testblock.hash).to.equal(undefined);
                   });
                 })`,
                 placeholder: `
@@ -58,29 +70,27 @@ module.exports = {
               },
               {
                 id: 010103,
-                text: `##Hashes\n The block hash is one of the most important property of the block. The hash is calculated over all data of the block. This means that if anything in the block changes, the original hash is no longer valid. The block hash can also be thought as the unique identifier of the block. For instance, blocks with same index can appear, but they all have unique hashes.
-                \n We calculate the hash of the block using the following code:
-                \n <code>const calculateHash = (index: number, previousHash: string, timestamp: number, data: string): string =>
-                CryptoJS.SHA256(index + previousHash + timestamp + data).toString();</code>
-                \n It should be noted that the block hash does not yet have anything to do with mining as there is no proof-of-work problem to solve. We use block hashes to preserve the integrity of the block and to explicitly reference the previous block.
-                The importance of the hash is that the block cannot be modified without changing the hash of every consecutive block.
-                This is demonstrated in the example below. If the data in block 44 is changed from “DESERT” to “STREET”, all hashes of the consecutive blocks must be changed. This is because the hash of the block depends on the value of the previousHash (among other things).`,
+                text: `## Hashes \n
+                \n We can calculate the hash of the block using the Crypto module that is built right into Node.js. 
+                \n Take a look at the [documentation] (https://nodejs.org/api/crypto.html) for specific usage. We will need to use: \n * \` .createHash \` to make a new SHA256 hash object \n * \` .update \` it with everything in our block \n * \` .digest \` (encode) it to hex \n * \` .toString \` 
+                \n \n Once you do this make sure to update the constructor's this.hash to be calculateHash().
+                `,
                 test: `describe('Block constructor', () => {
                   it('The Block should have the correct hash', () => {
                     const block = userCode.Block;
-                    const testblock = new block();
+                    const testblock = new Block();
                     window.chai.expect(testblock.length).to.equal(5);
                   });
                 })`,
                 placeholder: `
 class Block {
 
-  constructor(index, timestamp, data, previousHash = '') {
+  constructor(previousHash, index, timestamp, data) {
     this.index = index;
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
-    this.hash = this.calculateHash();
+    this.hash = undefined;
   }
 
   calculateHash() {
@@ -103,10 +113,67 @@ module.exports = {
             reps: [
               {
                 id: 010201,
-                text: `## Validation \n\n At any given time we must be able to validate if a block or a chain of blocks are valid in terms of integrity. This is true especially when we receive new blocks from other nodes and must decide whether to accept them or not. For a block to be valid the following must apply: The index of the block must be one number larger than the previous
-                The previousHash of the block match the hash of the previous block
-                The hash of the block itself must be valid`,
-                test: 'some code',
+                text: `## Validation \n\n At any given time we must be able to validate if a block or a chain of blocks are valid in terms of integrity. This is true especially when we receive new blocks from others and must decide whether to accept them or not. \n\n For a block to be valid the following must apply: 
+                \n * The index of the block must be one number larger than the previous
+                \n * The previousHash of the block match the hash of the previous block
+                \n * The hash of the block itself must be valid`,
+                test: `describe('The blockchain should be able to validate the integrity of its own blocks:', () => {
+                  class Block {
+                    constructor(index, timestamp, data, previousHash) {
+                      this.index = index;
+                      this.timestamp = timestamp;
+                      this.data = data;
+                      this.previousHash = previousHash;
+                      this.hash = this.calculateHash();
+                    }
+                  
+                    calculateHash() {
+                      return crypto
+                        .createHash('sha256')
+                        .update(
+                          this.index +
+                            this.previousHash +
+                            this.timestamp +
+                            JSON.stringify(this.data) +
+                            this.nonce
+                        )
+                        .digest('hex')
+                        .toString();
+                    }
+                  }
+                  const chain = userCode.Blockchain;
+                  const testchain = new chain();
+                  const block1 = new Block(0, '01/01/2018', 'Genesis', '0');
+                  const block2 = new Block(1, '01/01/2018', '$100', block1.hash);
+                  const block3 = new Block(2, '01/01/2018', '$200', block2.hash);
+                  testchain.blocks.push(block1)
+                  testchain.blocks.push(block2)
+                  testchain.blocks.push(block3)
+                  it('Returns True if valid', () => {
+                    const output = testchain.isChainValid()
+                    window.chai.expect(output).to.equal(true);
+                  });
+                  it('Returns False if index is not along the chain', () => {
+                    testchain.blocks[1].index = 4;
+                    const output = testchain.isChainValid()
+                    window.chai.expect(output).to.equal(false);
+                  });
+                  it('Returns False if data is tampered with', () => {
+                    testchain.blocks[0].data = '$300';
+                    const output = testchain.isChainValid()
+                    window.chai.expect(output).to.equal(false);
+                  });
+                  it('Returns False if block's own hash changes', () => {
+                    testchain.blocks[0].hash = '0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+                    const output = testchain.isChainValid()
+                    window.chai.expect(output).to.equal(false);
+                  });
+                  it('Returns False if block's previous hash changes', () => {
+                    testchain.blocks[1].hash = '0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
+                    const output = testchain.isChainValid()
+                    window.chai.expect(output).to.equal(false);
+                  });
+                })`,
                 placeholder: `class Blockchain {
   constructor() {
     this.blocks = [];
@@ -115,7 +182,7 @@ module.exports = {
   isChainValid() {
 
     // YOUR CODE GOES HERE
-
+    
   }
   
 }
@@ -124,12 +191,12 @@ module.exports = {
   Blockchain
 };`,
                 prevUrl: '/l/javascript/ex/1/set/1/rep/3',
-                nextUrl: '/l/javascript/ex/1/set/3/rep/1'
+                nextUrl: 'null'
               }
             ]
           },
           {
-            setName: 'Chain it together',
+            setName: 'For Removal**',
             reps: [
               {
                 id: 010301,
@@ -156,18 +223,18 @@ module.exports = {
         sets: []
       },
       {
-        id: 020000,
+        id: 030000,
         exerciseName: 'TRANSACTIONS',
         sets: []
       },
       {
-        id: 020000,
-        exerciseName: 'WALLET',
+        id: 040000,
+        exerciseName: 'CONSENSUS',
         sets: []
       },
       {
-        id: 020000,
-        exerciseName: 'CONTRACTS',
+        id: 050000,
+        exerciseName: 'WALLETS',
         sets: []
       }
     ]

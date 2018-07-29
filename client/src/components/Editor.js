@@ -65,26 +65,20 @@ export default class Editor extends Component {
         />
         <EditorNav>
           <Button
-            className="px-1"
+            className="px-4"
             color="light"
             onClick={this.handleSubmit}
             active
           >
-            Lift{' '}
-            <span role="img" aria-label="arm flex">
-              &#128170;
-            </span>
+            Lift
           </Button>
           <Button
-            className="px-1"
+            className="px-3"
             color="light"
             onClick={this.handleReset}
             active
           >
-            Reset{' '}
-            <span role="img" aria-label="recycle emoji">
-              &#9850;
-            </span>
+            Reset
           </Button>
         </EditorNav>
       </EditorContainer>
