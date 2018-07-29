@@ -122,7 +122,7 @@ export default class ExercisesList extends Component {
                   {index > 0 ? (
                     <text
                       class="comingsoon"
-                      x="30"
+                      x="26"
                       y="200"
                       fill="#ffb256"
                       font-weight="bold"

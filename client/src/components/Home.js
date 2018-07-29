@@ -22,7 +22,7 @@ const Home = () => {
         <p className="lead text-white text-center mt-3 px-1">
           CryptoGym is an interactive training center that teaches you
           blockchain technology one rep at a time. Choose your preferred
-          language and let's get started!
+          language and let's get lifting!
         </p>
         <div className="d-flex justify-content-center justify-content-around mt-3 mb-2">
           <JSLogo>
