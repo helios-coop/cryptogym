@@ -11,18 +11,15 @@ const Home = () => {
     <div>
       <HomeContainer>
         <h1
-          className="mb-4 mt-2 text-center heading quantico"
+          className="mb-2 mt-2 text-center heading quantico"
           style={{ color: '#ffb256' }}
         >
           CryptoGym<span className="beta">beta</span>
         </h1>
-        <h3
-          className="text-center sub-heading quantico"
-          style={{ color: '#79A7EA' }}
-        >
+        <h3 className="text-center quantico" style={{ color: '#79A7EA' }}>
           Flex Your Blockchain Muscles
         </h3>
-        <p className="lead text-white text-center">
+        <p className="lead text-white text-center mt-3 px-1">
           CryptoGym is an interactive training center that teaches you
           blockchain technology one rep at a time. Choose your preferred
           language and let's get started!
