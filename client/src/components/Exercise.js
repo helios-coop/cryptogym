@@ -29,7 +29,7 @@ class Exercise extends Component {
       this.props.history.push('/python');
     else
       axios
-        .get(`http://localhost:5000${this.state.currentContent.prevUrl}`)
+        .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.prevUrl}`)
         .then(response => {
           this.props.history.push(this.state.currentContent.prevUrl);
           this.setState({ currentContent: response.data });
@@ -43,7 +43,7 @@ class Exercise extends Component {
     let testSpecs = document.getElementById('mocha-report');
     if (testSpecs) testSpecs.remove();
     axios
-      .get(`http://localhost:5000${this.state.currentContent.nextUrl}`)
+      .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.nextUrl}`)
       .then(response => {
         this.props.history.push(this.state.currentContent.nextUrl);
         this.setState({ currentContent: response.data });
@@ -62,7 +62,7 @@ class Exercise extends Component {
     if (testSpecs) testSpecs.remove();
     const { language, ex, set, rep } = this.props.match.params;
     axios
-      .get(`http://localhost:5000/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      .get(`https://cryptogym-server.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
       .then(response => {
         this.setState({ currentContent: response.data });
       })
@@ -92,7 +92,7 @@ class Exercise extends Component {
   componentDidMount() {
     const { language, ex, set, rep } = this.props.match.params;
     axios
-      .get(`http://localhost:5000/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      .get(`https://cryptogym-server.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
       .then(response => {
         this.setState({ currentContent: response.data });
       })

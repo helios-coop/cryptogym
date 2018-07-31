@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { EditorContainer, EditorNav } from '../styles/styles.js';
-import axios from 'axios';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
 import '../styles/mocha.css';
@@ -33,7 +32,7 @@ export default class Editor extends Component {
         ${currentClass}
       };`);
       eval(this.props.test);
-      
+
       window.mocha.reporter('html').run(function(failures) {
         if (failures === 0) console.log('pass!');
         // play success animation
