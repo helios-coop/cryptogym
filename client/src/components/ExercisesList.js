@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { BeatLoader } from 'react-spinners';
 import { Link } from 'react-router-dom';
 import { CourseHomeContainer, WeightContainer } from '../styles/styles.js';
 import Footer from './Footer';
@@ -8,7 +9,8 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 export default class ExercisesList extends Component {
   state = {
-    exercises: []
+    exercises: [],
+    loading: true
   };
 
   getIntroText = () => {
@@ -16,7 +18,7 @@ export default class ExercisesList extends Component {
     axios
       .get(`https://cryptogym-server.herokuapp.com/exercises/${path}`)
       .then(response => {
-        this.setState({ exercises: response.data });
+        this.setState({ exercises: response.data, loading: false });
       })
       .catch(error => {
         console.log(`There was an error getting text: ${error}`);
@@ -36,6 +38,9 @@ export default class ExercisesList extends Component {
         >
           Choose Your Exercise!
         </h2>
+        <div className="d-flex justify-content-center">
+          <BeatLoader color={'white'} loading={this.state.loading} />
+        </div>
         <WeightContainer id="weightContainer" className="mb-5">
           {this.state.exercises.map((exerciseName, index) => {
             return (
