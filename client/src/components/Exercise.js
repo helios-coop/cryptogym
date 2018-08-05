@@ -29,7 +29,10 @@ class Exercise extends Component {
       this.props.history.push('/python');
     else
       axios
-        .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.prevUrl}`)
+        // .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.prevUrl}`)
+        .get(
+          `https://cryptogym.herokuapp.com${this.state.currentContent.prevUrl}`
+        )
         .then(response => {
           this.props.history.push(this.state.currentContent.prevUrl);
           this.setState({ currentContent: response.data });
@@ -43,7 +46,10 @@ class Exercise extends Component {
     let testSpecs = document.getElementById('mocha-report');
     if (testSpecs) testSpecs.remove();
     axios
-      .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.nextUrl}`)
+      // .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.nextUrl}`)
+      .get(
+        `https://cryptogym.herokuapp.com${this.state.currentContent.nextUrl}`
+      )
       .then(response => {
         this.props.history.push(this.state.currentContent.nextUrl);
         this.setState({ currentContent: response.data });
@@ -54,7 +60,10 @@ class Exercise extends Component {
   };
 
   setConsole = (message, code) => {
-    this.setState({console: [message], currentContent: { ...this.state.currentContent, placeholder: code }})
+    this.setState({
+      console: [message],
+      currentContent: { ...this.state.currentContent, placeholder: code }
+    });
   };
 
   handleReset = () => {
@@ -62,7 +71,10 @@ class Exercise extends Component {
     if (testSpecs) testSpecs.remove();
     const { language, ex, set, rep } = this.props.match.params;
     axios
-      .get(`https://cryptogym-server.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      // .get(`https://cryptogym-server.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      .get(
+        `https://cryptogym.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`
+      )
       .then(response => {
         this.setState({ currentContent: response.data });
       })
@@ -82,9 +94,9 @@ class Exercise extends Component {
             setConsole={this.setConsole}
             handleReset={this.handleReset}
           />
-          <Console message={this.state.console}/>
+          <Console message={this.state.console} />
         </ExerciseContainer>
-        <BottomNav prev={this.previous} next={this.next}/>
+        <BottomNav prev={this.previous} next={this.next} />
       </div>
     );
   }
@@ -92,7 +104,10 @@ class Exercise extends Component {
   componentDidMount() {
     const { language, ex, set, rep } = this.props.match.params;
     axios
-      .get(`https://cryptogym-server.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      // .get(`https://cryptogym-server.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`)
+      .get(
+        `https://cryptogym.herokuapp.com/l/${language}/ex/${ex}/set/${set}/rep/${rep}`
+      )
       .then(response => {
         this.setState({ currentContent: response.data });
       })

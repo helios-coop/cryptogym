@@ -13,7 +13,8 @@ export default class CourseHome extends Component {
 
   getIntroText = () => {
     axios
-      .get('https://cryptogym-server.herokuapp.com/0/1')
+      // .get('https://cryptogym-server.herokuapp.com/0/1')
+      .get('https://cryptogym.herokuapp.com/0/1')
       .then(response => {
         const newState = this.state.introText;
         newState.push(response.data);
