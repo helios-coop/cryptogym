@@ -130,7 +130,6 @@ const data = [
                         .toString();
                     }
                   }
-
                   const chain = userCode.Blockchain;
                   const testchain = new chain();
                   const block1 = new Block(0, '01/01/2018', 'Genesis', '0');
@@ -139,7 +138,6 @@ const data = [
                   testchain.blocks.push(block1)
                   testchain.blocks.push(block2)
                   testchain.blocks.push(block3)
-
                   it('Returns True if valid', () => {
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(true);

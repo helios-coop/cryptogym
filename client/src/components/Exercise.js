@@ -19,7 +19,7 @@ class Exercise extends Component {
       prevUrl: '',
       nextUrl: ''
     },
-    console: '',
+    console: [],
     percent: 0
   };
 
