@@ -82,11 +82,7 @@ const data = [
     this.timestamp = timestamp;
     this.data = data;
     this.previousHash = previousHash;
-<<<<<<< HEAD
     this.hash = null;
-=======
-    this.hash = undefined;
->>>>>>> 8557c5e2eb322204140de391cf12fe2171ac3fd9
   }
 
   calculateHash() {
@@ -134,10 +130,6 @@ const data = [
                         .toString();
                     }
                   }
-<<<<<<< HEAD
-
-=======
->>>>>>> 8557c5e2eb322204140de391cf12fe2171ac3fd9
                   const chain = userCode.Blockchain;
                   const testchain = new chain();
                   const block1 = new Block(0, '01/01/2018', 'Genesis', '0');
@@ -146,10 +138,6 @@ const data = [
                   testchain.blocks.push(block1)
                   testchain.blocks.push(block2)
                   testchain.blocks.push(block3)
-<<<<<<< HEAD
-
-=======
->>>>>>> 8557c5e2eb322204140de391cf12fe2171ac3fd9
                   it('Returns True if valid', () => {
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(true);
@@ -164,20 +152,12 @@ const data = [
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(false);
                   });
-<<<<<<< HEAD
                   it('Returns False if blocks own hash changes', () => {
-=======
-                  it('Returns False if block's own hash changes', () => {
->>>>>>> 8557c5e2eb322204140de391cf12fe2171ac3fd9
                     testchain.blocks[0].hash = '0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(false);
                   });
-<<<<<<< HEAD
                   it('Returns False if blocks previous hash changes', () => {
-=======
-                  it('Returns False if block's previous hash changes', () => {
->>>>>>> 8557c5e2eb322204140de391cf12fe2171ac3fd9
                     testchain.blocks[1].hash = '0x000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f';
                     const output = testchain.isChainValid()
                     window.chai.expect(output).to.equal(false);
