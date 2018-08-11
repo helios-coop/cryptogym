@@ -17,7 +17,7 @@ class Exercise extends Component {
       prevUrl: '',
       nextUrl: ''
     },
-    console: ''
+    console: []
   };
 
   previous = () => {

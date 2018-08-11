@@ -5,8 +5,9 @@ import styled from 'styled-components';
 export const TNav = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 0 20px;
+  padding: 0 20px;
   max-height: 100px;
+  background: #151c24;
 `;
 
 export const Logo = styled.img`
@@ -111,9 +112,13 @@ export const ContentContainer = styled.div`
   width: 34.2vw;
   padding: 30px 40px;
   overflow: auto;
+  font-weight: 200;
 
   h2 {
     color: #efd469;
+  }
+  p {
+    padding-left: 5px;
   }
 `;
 
@@ -133,6 +138,9 @@ export const ConsoleContainer = styled.div`
   min-width: 400px;
   width: 34vw;
   background: black;
+  overflow: auto;
+  color: ##c00;
+  padding-top: 10px;
 `;
 
 export const EditorNav = styled.div`

@@ -23,8 +23,6 @@ export default class Editor extends Component {
       if (testSpecs) testSpecs.remove();
     }
 
-    // Abstract away module export
-
     if (this.refs.aceEditor.editor.session.$annotations.length === 0) {
       const crypto = require('crypto');
       const currentClass = /\sBlock\s/.test(this.props.defaultCode) ? "Block" : 'Blockchain';
@@ -38,17 +36,18 @@ export default class Editor extends Component {
         // play success animation
         // unlock next lesson
         else {
+          console.log('hi')
           // set error message
           // shake animation
         }
       });
+      this.props.setConsole([], this.refs.aceEditor.editor.session.getValue());
     } else {
-      let errorString = '';
+      let errorStrings = [];
       for (let i = 0; i < this.refs.aceEditor.editor.session.$annotations.length; i++) {
-        errorString += this.refs.aceEditor.editor.session.$annotations[i].text;
-        errorString += '\n'
+        errorStrings.push(this.refs.aceEditor.editor.session.$annotations[i].text) 
       }
-      this.props.setConsole(errorString, this.refs.aceEditor.editor.session.getValue());
+      this.props.setConsole(errorStrings, this.refs.aceEditor.editor.session.getValue());
     }
   };
 
