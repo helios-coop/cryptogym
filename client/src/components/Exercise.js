@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Progress } from 'react-sweet-progress';
 import TextContent from './TextContent.js';
 import Editor from './Editor.js';
 import BottomNav from './BottomNav.js';
 import Console from './Console.js';
 
 import { ExerciseContainer } from '../styles/styles.js';
+import 'react-sweet-progress/lib/style.css';
 
 class Exercise extends Component {
   state = {
@@ -17,7 +19,8 @@ class Exercise extends Component {
       prevUrl: '',
       nextUrl: ''
     },
-    console: []
+    console: [],
+    percent: 0
   };
 
   previous = () => {
@@ -36,6 +39,9 @@ class Exercise extends Component {
         .then(response => {
           this.props.history.push(this.state.currentContent.prevUrl);
           this.setState({ currentContent: response.data });
+          this.setState({
+            percent: this.state.percent - 34 > 0 ? this.state.percent - 34 : 0
+          });
         })
         .catch(error => {
           console.log(`There was an error getting content: ${error}`);
@@ -53,6 +59,9 @@ class Exercise extends Component {
       .then(response => {
         this.props.history.push(this.state.currentContent.nextUrl);
         this.setState({ currentContent: response.data });
+        this.setState({
+          percent: this.state.percent + 34 < 100 ? this.state.percent + 34 : 100
+        });
       })
       .catch(error => {
         console.log(`There was an error getting content: ${error}`);
@@ -86,6 +95,28 @@ class Exercise extends Component {
   render() {
     return (
       <div>
+        <div className="d-flex justify-content-center">
+          <Progress
+            className=" mb-3 w-75"
+            percent={this.state.percent}
+            theme={{
+              success: {
+                symbol: '💪',
+                color: 'green'
+              },
+              active: {
+                symbol: '🏋️',
+                color: '#ffb256',
+                trailColor: '#4180ed'
+              },
+              default: {
+                symbol: '😬',
+                trailColor: '#4180ed'
+              }
+            }}
+          />
+        </div>
+
         <ExerciseContainer>
           <TextContent text={this.state.currentContent.text} />
           <Editor
