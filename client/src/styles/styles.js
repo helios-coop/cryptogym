@@ -104,7 +104,7 @@ export const ExerciseContainer = styled.div`
 
 export const ContentContainer = styled.div`
   height: calc(100vh - 100px);
-  font-size: 1.2em;
+  font-size: 1.2rem;
   text-align: left;
   background: #093145;
   color: white;
@@ -119,6 +119,15 @@ export const ContentContainer = styled.div`
   }
   p {
     padding-left: 5px;
+  }
+
+  a {
+    font-size: 1.2rem;
+  }
+
+  code {
+    font-family: inconsolata;
+    font-size: 1.2rem;
   }
 `;
 
