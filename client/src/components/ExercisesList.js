@@ -67,7 +67,7 @@ export default class ExercisesList extends Component {
                       id="path1"
                       fill="none"
                       stroke="black"
-                      stroke-width="1"
+                      strokeWidth="1"
                       d="M58,142c0-38.395,32-70,70-70s70,32,70,70"
                     />
                   </defs>
@@ -77,14 +77,14 @@ export default class ExercisesList extends Component {
                     r="110"
                     fill="url(#grad1)"
                     stroke="rgb(44, 44, 44)"
-                    stroke-width="12"
+                    strokeWidth="12"
                   />
                   <circle
                     cx="125"
                     cy="130"
                     r="24"
                     stroke="url(#grad1)"
-                    stroke-width="10"
+                    strokeWidth="10"
                     fill="rgb(44, 44, 44)"
                   />
                   <circle cx="125" cy="130" r="14" fill="#151c24" />
@@ -92,10 +92,10 @@ export default class ExercisesList extends Component {
                   <text
                     id="myText"
                     fill="white"
-                    font-family="Helvetica"
-                    font-size="18px"
-                    text-anchor="middle"
-                    font-weight="bold"
+                    fontFamily="Helvetica"
+                    fontSize="18px"
+                    textAnchor="middle"
+                    fontWeight="bold"
                   >
                     <textPath startOffset="50%" xlinkHref="#path1">
                       <tspan>{exerciseName}</tspan>
@@ -105,35 +105,35 @@ export default class ExercisesList extends Component {
                     x={index > 1 ? 40 : 44}
                     y="136"
                     fill="white"
-                    font-weight="bold"
+                    fontWeight="bold"
                   >
                     {(
                       (index > 1 ? index * 10 + 5 : index * 5 + 5) / 2.2
                     ).toFixed(1)}
                   </text>
-                  <text x="48" y="156" fill="white" font-weight="bold">
+                  <text x="48" y="156" fill="white" fontWeight="bold">
                     KG
                   </text>
                   <text
                     x={index > 0 ? 170 : 176}
                     y="136"
                     fill="white"
-                    font-weight="bold"
+                    fontWeight="bold"
                   >
                     {index > 1 ? index * 10 + 5 : index * 5 + 5}
                   </text>
-                  <text x="171" y="156" fill="white" font-weight="bold">
+                  <text x="171" y="156" fill="white" fontWeight="bold">
                     LB
                   </text>
                   {index > 0 ? (
                     <text
-                      class="comingsoon"
+                      className="comingsoon"
                       x="26"
                       y="200"
                       fill="#ffb256"
-                      font-weight="bold"
-                      font-size="28px"
-                      font-family="Quantico"
+                      fontWeight="bold"
+                      fontSize="28px"
+                      fontFamily="Quantico"
                     >
                       COMING SOON
                     </text>

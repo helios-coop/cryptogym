@@ -32,12 +32,15 @@ export default class Editor extends Component {
       eval(this.props.test);
 
       window.mocha.reporter('html').run(function(failures) {
-        if (failures === 0) console.log('pass!');
-        // play success animation
-        // unlock next lesson
+        if (failures === 0){
+          console.log('pass!');
+          // play success animation
+          // unlock next lesson in local storage
+          // let currentProgress = window.localStorage.getItem('progress');
+          // window.localStorage.setItem('progress', `{${currentProgress ? currentProgress++ : 0}}`);
+        } 
         else {
-          console.log('hi')
-          // set error message
+          console.log('fail')
           // shake animation
         }
       });
