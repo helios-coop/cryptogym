@@ -52,6 +52,7 @@ export default class ExercisesList extends Component {
                     : `/l${this.props.match.url}/ex/${index + 1}/set/1/rep/1`
                 }
                 style={{ textDecoration: 'none' }}
+                key={index}
               >
                 <svg
                   id="myShape"
