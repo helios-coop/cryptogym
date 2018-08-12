@@ -97,7 +97,7 @@ class Exercise extends Component {
       <div>
         <div className="d-flex justify-content-center">
           <Progress
-            className=" mb-3 w-75"
+            className="mb-2 w-75"
             percent={this.state.percent}
             theme={{
               success: {
