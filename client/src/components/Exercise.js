@@ -49,23 +49,26 @@ class Exercise extends Component {
   };
 
   next = () => {
-    let testSpecs = document.getElementById('mocha-report');
-    if (testSpecs) testSpecs.remove();
-    axios
-      // .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.nextUrl}`)
-      .get(
-        `https://cryptogym.herokuapp.com${this.state.currentContent.nextUrl}`
-      )
-      .then(response => {
-        this.props.history.push(this.state.currentContent.nextUrl);
-        this.setState({ currentContent: response.data });
-        this.setState({
-          percent: this.state.percent + 34 < 100 ? this.state.percent + 34 : 100
+    // check local storage
+    if (true) {
+      let testSpecs = document.getElementById('mocha-report');
+      if (testSpecs) testSpecs.remove();
+      axios
+        // .get(`https://cryptogym-server.herokuapp.com${this.state.currentContent.nextUrl}`)
+        .get(
+          `https://cryptogym.herokuapp.com${this.state.currentContent.nextUrl}`
+        )
+        .then(response => {
+          this.props.history.push(this.state.currentContent.nextUrl);
+          this.setState({ currentContent: response.data });
+          this.setState({
+            percent: this.state.percent + 34 < 100 ? this.state.percent + 34 : 100
+          });
+        })
+        .catch(error => {
+          console.log(`There was an error getting content: ${error}`);
         });
-      })
-      .catch(error => {
-        console.log(`There was an error getting content: ${error}`);
-      });
+    }
   };
 
   setConsole = (message, code) => {
@@ -124,6 +127,9 @@ class Exercise extends Component {
             defaultCode={this.state.currentContent.placeholder}
             setConsole={this.setConsole}
             handleReset={this.handleReset}
+            ex={this.props.match.params.ex}
+            set={this.props.match.params.set}
+            rep={this.props.match.params.rep}
           />
           <Console message={this.state.console} />
         </ExerciseContainer>
