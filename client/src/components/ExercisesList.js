@@ -17,6 +17,7 @@ export default class ExercisesList extends Component {
     const path = this.props.match.path === '/javascript' ? 0 : 1;
     axios
       // .get(`https://cryptogym-server.herokuapp.com/exercises/${path}`)
+      // TODO: process.env.REACT_APP_API_EXERCISES
       .get(`https://cryptogym.herokuapp.com/exercises/${path}`)
       .then(response => {
         this.setState({ exercises: response.data, loading: false });
