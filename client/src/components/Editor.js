@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { EditorContainer, EditorNav } from '../styles/styles.js';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
@@ -7,10 +8,14 @@ import '../styles/mocha.css';
 import 'brace/mode/javascript';
 import 'brace/theme/cobalt';
 
-export default class Editor extends Component {
+class Editor extends Component {
   state = {
     default: ''
   };
+
+  componentDidMount() {
+    console.log("Current progress:", this.props.progress);
+  }
 
   componentDidUpdate() {
     this.refs.aceEditor.editor.session.setValue(this.props.defaultCode);
@@ -38,7 +43,7 @@ export default class Editor extends Component {
           // unlock next lesson in local storage
           // let currentProgress = window.localStorage.getItem('progress');
           // window.localStorage.setItem('progress', `{${currentProgress ? currentProgress++ : 0}}`);
-        } 
+        }
         else {
           console.log('fail')
           // shake animation
@@ -48,7 +53,7 @@ export default class Editor extends Component {
     } else {
       let errorStrings = [];
       for (let i = 0; i < this.refs.aceEditor.editor.session.$annotations.length; i++) {
-        errorStrings.push(this.refs.aceEditor.editor.session.$annotations[i].text) 
+        errorStrings.push(this.refs.aceEditor.editor.session.$annotations[i].text)
       }
       this.props.setConsole(errorStrings, this.refs.aceEditor.editor.session.getValue());
     }
@@ -91,3 +96,5 @@ export default class Editor extends Component {
     );
   }
 }
+
+export default connect(({progress})=>({progress}))(Editor);

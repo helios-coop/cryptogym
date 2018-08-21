@@ -1,0 +1,22 @@
+{
+  "connection": "default",
+  "collectionName": "circuit",
+  "info": {
+    "name": "circuit",
+    "description": "A group of exercises"
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "exercises": {
+      "type": "json"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
