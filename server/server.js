@@ -1,6 +1,9 @@
 const express = require('express');
 const helmet = require('helmet');
 const cors = require('cors');
+const axios = require('axios');
+
+require('dotenv').config();
 
 const server = express();
 
@@ -9,6 +12,60 @@ server.use(express.json());
 server.use(cors());
 
 const data = require('./resources/data.js');
+
+const GITHUB_OAUTH_URL = `https://github.com/login/oauth/authorize?scope=user:email&client_id=${process.env.GITHUB_CLIENT_ID}`;
+
+server.route('/auth')
+  .get((request, response) => {
+    axios.get(GITHUB_OAUTH_URL)
+      .then((res) => {
+        const data = res.data;
+        console.log(data);
+        response.send(data);
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
+
+server.route('/auth/callback')
+  .get((request, response) => {
+    const session_code = request.query.code;
+    axios.post('https://github.com/login/oauth/access_token', {
+      client_id: process.env.GITHUB_CLIENT_ID,
+      client_secret: process.env.GITHUB_CLIENT_SECRET,
+      code: session_code
+    })
+      .then(res => {
+        if (res.data) {
+          const data = res.data;
+
+          const access_token_param = data.match(/^(access_token)[^&]+/g)[0];
+          const access_token = access_token_param.split("=")[1];
+
+          const scope_param = data.match(/(scope)[^&]+/g)[0];
+          const has_email_scope = scope_param.includes('email');
+
+          if (has_email_scope) {
+            axios.get('https://api.github.com/user/emails', {
+              params: {access_token}
+            })
+              .then(res => {
+                const emails = res.data;
+                // TODO: create helper to check for primary email
+                // TODO: fetch this user from db and log them in
+                response.send(emails[0].email);
+              })
+              .catch(err => {
+                console.log(err);
+              });
+          } // endif has_email_scope
+        } // endif res.data
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  });
 
 server.get('/exercises/:languageNumber', (req, res) => {
   const lang = req.params.languageNumber;
