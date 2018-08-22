@@ -7,14 +7,8 @@ class Login extends Component {
   authenticate = params => {
     const code_param = params.match(/(code=)[^&]+/g)[0];
     const code = code_param.split("=")[1];
-    axios.get('http://localhost:5000/auth/callback', { params: {code} })
-      .then(res => {
-        // TODO: send user to their dashboard OR drop them where they left off
-        console.log("Logged in with email:", res.data);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    // this.props.loginGithub(code)
+    // if this.props.loggedIn redirect to dashboard
   }
 
   render() {

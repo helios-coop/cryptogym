@@ -53,13 +53,15 @@ server.route('/auth/callback')
               .then(res => {
                 const emails = res.data;
                 // TODO: create helper to check for primary email
-                // TODO: fetch this user from db and log them in
                 response.send(emails[0].email);
               })
               .catch(err => {
                 console.log(err);
               });
           } // endif has_email_scope
+
+          // TODO: also get the user id from github and send back to client
+          
         } // endif res.data
       })
       .catch(err => {
