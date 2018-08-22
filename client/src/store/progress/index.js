@@ -27,16 +27,18 @@ export function completed(exerciseId) {
   return dispatch => {
     // Server should get the current user from req.cookies when updating the
     // resource. That is why we use withCredentials.
-    axios.post(API_URL+'/progress', {
-      exerciseId
-    }, { withCredentials: true})
-      .then(res => {
-        // Server should send back the exercise number
-        dispatch(actions.updateProgress(res.data));
-      })
-      .catch((err) => {
-        error(err);
-        dispatch(actions.updateProgressFailed(JSON.stringify(err))); //
-      });
+
+    dispatch(actions.updateProgress(exerciseId)); // temporary until db setup
+    // axios.post(API_URL+'/progress', {
+    //   exerciseId
+    // }, { withCredentials: true})
+    //   .then(res => {
+    //     // Server should send back the exercise number
+    //     dispatch(actions.updateProgress(res.data));
+    //   })
+    //   .catch((err) => {
+    //     error(err);
+    //     dispatch(actions.updateProgressFailed(JSON.stringify(err))); //
+    //   });
   }
 };

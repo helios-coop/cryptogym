@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { completed } from '../store/progress';
 import { EditorContainer, EditorNav } from '../styles/styles.js';
 import AceEditor from 'react-ace';
 import { Button } from 'reactstrap';
@@ -15,6 +16,7 @@ class Editor extends Component {
 
   componentDidMount() {
     console.log("Current progress:", this.props.progress);
+    console.log("Current exercise:", this.props.ex);
   }
 
   componentDidUpdate() {
@@ -36,8 +38,9 @@ class Editor extends Component {
       };`);
       eval(this.props.test);
 
-      window.mocha.reporter('html').run(function(failures) {
+      window.mocha.reporter('html').run((failures) => {
         if (failures === 0){
+          this.props.completed(this.props.ex);
           console.log('pass!');
           // play success animation
           // unlock next lesson in local storage
@@ -49,6 +52,7 @@ class Editor extends Component {
           // shake animation
         }
       });
+
       this.props.setConsole([], this.refs.aceEditor.editor.session.getValue());
     } else {
       let errorStrings = [];
@@ -97,4 +101,4 @@ class Editor extends Component {
   }
 }
 
-export default connect(({progress})=>({progress}))(Editor);
+export default connect(({progress})=>({progress}), {completed})(Editor);
