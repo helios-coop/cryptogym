@@ -4,6 +4,7 @@
 
 import axios from 'axios';
 import * as actions from './actions.js';
+import { API_URL } from '../../config/config.js';
 
 const error = err => {console.error(err)};
 
@@ -24,11 +25,13 @@ export function completed(exerciseId) {
   the progress state with the subseqeunt exercise.
   */
   return dispatch => {
-    axios.post(process.env.REACT_APP_SERVER_ACCOUNT+'/progress', {
+    // Server should get the current user from req.cookies when updating the
+    // resource. That is why we use withCredentials.
+    axios.post(API_URL+'/progress', {
       exerciseId
     }, { withCredentials: true})
       .then(res => {
-        // the server should send back the exercise number
+        // Server should send back the exercise number
         dispatch(actions.updateProgress(res.data));
       })
       .catch((err) => {
