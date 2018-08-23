@@ -10,6 +10,7 @@ const error = err => {console.error(err)};
 
 export const initialState = {
   error: "",
+  loggedIn: false,
   id: "",
   email: "",
   progress: ""

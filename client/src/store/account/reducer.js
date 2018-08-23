@@ -10,7 +10,7 @@ export default function progressReducer(state = initialState, action) {
     case types.LOGIN_SUCCESS:
       return { ...state, loggedIn: true };
     case types.LOGIN_FAILURE:
-      return { ...state, loggedIn: false, error: err };
+      return { ...state, loggedIn: false, error: action.err };
     case types.USER_DATA_SUCCESS:
       return { ...state, email: action.data };
     default:
