@@ -1,0 +1,25 @@
+{
+  "exercise": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      },
+      "text": {
+        "appearance": ""
+      }
+    }
+  },
+  "circuit": {
+    "attributes": {
+      "name": {
+        "appearance": ""
+      },
+      "exercises": {
+        "appearance": ""
+      },
+      "description": {
+        "appearance": ""
+      }
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/circuit",
+      "handler": "Circuit.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/circuit/count",
+      "handler": "Circuit.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/circuit/:_id",
+      "handler": "Circuit.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/circuit",
+      "handler": "Circuit.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/circuit/:_id",
+      "handler": "Circuit.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/circuit/:_id",
+      "handler": "Circuit.destroy",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

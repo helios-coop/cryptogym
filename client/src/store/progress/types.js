@@ -1,0 +1,6 @@
+/**
+* Progress types
+*/
+
+export const UPDATE_PROGRESS_SUCCESS = 'UPDATE_PROGRESS_SUCCESS';
+export const UPDATE_PROGRESS_FAILURE = 'LOGGED_IN_SUCCESS';

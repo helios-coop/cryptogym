@@ -14,7 +14,7 @@ const Team = () => {
           <img
             className=" rounded-circle"
             style={{ height: '240px' }}
-            src="https://avatars1.githubusercontent.com/u/35357243?s=460&v=4"
+            src={require('../images/jeremy.jpg')}
             alt="Jeremy Jones"
           />
           <h4 className="text-center text-white mt-2">Jeremy A. Jones</h4>
@@ -35,16 +35,17 @@ const Team = () => {
                 style={{ color: 'white' }}
               />
             </a>
-            `<a href="https://medium.com/@jeremy.a.jones">
+            `
+            <a href="https://medium.com/@jeremy.a.jones">
               <FontAwesome name="medium" size="1x" style={{ color: 'white' }} />
             </a>
           </div>
         </div>
-        <div className="my-5 mx-5">
+        <div className="mt-5 mx-5">
           <img
             className="rounded-circle"
             style={{ height: '240px' }}
-            src="https://avatars0.githubusercontent.com/u/28818476?s=400&v=4"
+            src={require('../images/justin.jpg')}
             alt="Justin Kaseman"
           />
           <h4 className="text-center text-white mt-2">Justin Kaseman</h4>
@@ -67,6 +68,42 @@ const Team = () => {
             </a>
 
             <a href="https://medium.com/@justinkaseman">
+              <FontAwesome
+                className="px-2"
+                name="medium"
+                size="1x"
+                style={{ color: 'white' }}
+              />
+            </a>
+          </div>
+        </div>
+        <div className="my-5 mx-5">
+          <img
+            className="rounded-circle"
+            style={{ height: '240px' }}
+            src={require('../images/val.jpg')}
+            alt="Valerie Denay Mack"
+          />
+          <h4 className="text-center text-white mt-2">Valerie Mack</h4>
+          <div className="d-flex justify-content-center">
+            <a href="https://www.linkedin.com/in/valmack/">
+              <FontAwesome
+                className="px-2"
+                name="linkedin-square"
+                size="1x"
+                style={{ color: 'white' }}
+              />
+            </a>
+            <a href="https://github.com/thevaleriemack">
+              <FontAwesome
+                className="px-2"
+                name="github"
+                size="1x"
+                style={{ color: 'white' }}
+              />
+            </a>
+
+            <a href="https://medium.com/@thevaleriemack">
               <FontAwesome
                 className="px-2"
                 name="medium"

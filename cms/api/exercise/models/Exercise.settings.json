@@ -1,0 +1,19 @@
+{
+  "connection": "default",
+  "collectionName": "exercise",
+  "info": {
+    "name": "exercise",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    }
+  }
+}
